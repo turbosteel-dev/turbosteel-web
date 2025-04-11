@@ -1,0 +1,58 @@
+h2 {
+    font-weight: 700;
+    background-image: linear-gradient(to right, #1f579f, #f0312d 90%);
+    color: transparent;
+    background-clip: text;
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.content {
+    padding: 15px;
+}
+
+img {
+    height: 200px;
+}
+
+span {
+    color: var(--ts-primary-color);
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 19px;
+}
+
+p {
+    color: #667085;
+}
+
+button {
+    font-size: 14px;
+    padding: 2px 10px;
+    border-radius: 16px;
+    border: none;
+    margin: 5px;
+}
+
+.btn-0 {
+    color: var(--ts-accent-color2);
+    background-color: #f0f9ff;
+}
+
+.btn-1 {
+    color: #3538cd;
+    background-color: #eef4ff;
+}
+
+.btn-2 {
+    color: #c4320a;
+    background-color: #fff6ed;
+}
+
+.button {
+    padding: 8px 30px;
+    font-size: 17px;
+    border-radius: 30px;
+}

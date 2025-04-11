@@ -1,0 +1,11 @@
+<div class="main-container" *ngIf="featureBannerData">
+    <img class="img-fluid" [src]="featureBannerData[0]?.imageUrl" alt="product-feature-banner">
+</div>
+
+<div class="feature-container py-5" *ngIf="featureData">
+    <div class="container">
+        <div class="row">
+            <p [innerHtml]="safeProductfeature"></p>
+        </div>
+    </div>
+</div>

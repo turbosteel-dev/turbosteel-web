@@ -1,0 +1,56 @@
+.advantage-container{
+    img {
+        height: 80px;
+    }
+    p{
+        font-size: 15px;
+    }
+}
+
+h5 {
+    font-size: 19px;
+}
+
+.flip-card {
+    background-color: transparent;
+    height: 350px;
+    perspective: 1000px;
+    margin: 12px 0;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 14px;
+}
+
+.flip-card-front {
+    background-color: var(--ts-primary-color);
+}
+
+.flip-card-back {
+    background-color: var(--ts-primary-color);
+    transform: rotateY(180deg);
+}

@@ -1,0 +1,13 @@
+<div class="about-container" *ngIf="aboutData">
+    <div class="container py-5">
+        <div class="row">
+            <h2 class="text-center mb-3">{{aboutData[0]?.title | uppercase}}</h2>
+            <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12">
+                <p [innerHtml]="safeDesc"></p>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12">
+                <img class="img-fluid" src="{{aboutData[0]?.imageUrl}}" alt="about">
+            </div>
+        </div>
+    </div>
+</div>

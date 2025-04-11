@@ -1,0 +1,16 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.18);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+button {
+    background-color: var(--ts-primary-color);
+    color: var(--ts-accent-color1);
+    border-radius: 6px;
+    border: none;
+    padding: 8px 22px;
+}

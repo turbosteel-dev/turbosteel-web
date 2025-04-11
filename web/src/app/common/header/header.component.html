@@ -1,0 +1,61 @@
+<header>
+    <div class="res">
+        <a routerLink="/home"><img src="assets/images/logo.jpg" class="logo" alt="logo"></a>
+        <a class="menu"><img src="assets/icons/hamberger-menu.svg" alt="hamberger"/></a>
+    </div>
+    <div class="main-nav">
+        <div class="first-nav">
+            <a routerLink="/home"><img class="img-fluid web-logo" src="assets/images/logo.jpg" alt="logo"></a>
+        </div>
+        <div class="sidenav">
+            <ul>
+                <li class="navbar">
+                    <a routerLinkActive="active" routerLink="">About Us</a>
+                </li>
+                <li class="navbar">
+                    <a routerLinkActive="active" routerLink=""> Why Turbosteel</a>
+                </li>
+                <li class="navbar" (mouseleave)="closeDropdown()" (mouseenter)="openDropdown()">
+                    <a routerLinkActive="active" routerLink="/products" class="dropdown-trigger d-flex align-items-center"
+                        (click)="toggleDropdown()"> Our Products
+                        <!-- <img class="chevron-img ms-2" src="assets/images/icons/chevron.svg" alt=""> -->
+                    </a>
+                    <div class="dropdown" *ngIf="isDropdownOpen">
+                        <div *ngFor="let data of productData">
+                            <a routerLinkActive="active" [routerLink]="['/products', data?.productUrlId || '']"
+                                (click)="closeDropdown()">
+                                {{ data?.title || 'Unnamed' }}
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="navbar" (mouseleave)="closeDropdown()" (mouseenter)="openDropdown()">
+                    <a routerLinkActive="active" routerLink="/facilities" class="dropdown-trigger d-flex align-items-center"
+                        (click)="toggleDropdown()"> Facilities
+                        <!-- <img class="chevron-img ms-2" src="assets/images/icons/chevron.svg" alt=""> -->
+                    </a>
+                    <div class="dropdown" *ngIf="isDropdownOpen">
+                        <div *ngFor="let data of facilityCategoryData">
+                            <a routerLinkActive="active" [routerLink]="['/facilities', data?.url || '']"
+                                (click)="closeDropdown()">
+                                {{ data?.title || 'Unnamed' }}
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="navbar">
+                    <a routerLinkActive="active" routerLink="">Buy</a>
+                </li>
+                <li class="navbar">
+                    <a routerLinkActive="active" routerLink="">Registration</a>
+                </li>
+                <li class="navbar">
+                    <a routerLinkActive="active" routerLink="">News Center</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+           <button>Contact Us</button>
+        </div>
+    </div>
+</header>

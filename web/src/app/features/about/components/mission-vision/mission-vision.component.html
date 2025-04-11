@@ -1,0 +1,19 @@
+<div class="main-container" *ngIf="visionBannerData">
+    <img class="img-fluid" [src]="visionBannerData[0]?.imageUrl" alt="mission">
+</div>
+
+<div class="mission-container py-5 mb-5" *ngIf="visionData">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-4 col-sm-12 col-md-4" *ngFor="let item of visionData">
+                <div class="content">
+                    <div>
+                        <h4 class="mb-3">{{item.title | uppercase}}</h4>
+                        <p class="mb-4">{{item.description}}</p>
+                    </div>
+                    <a href=""> <button>Learn More</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

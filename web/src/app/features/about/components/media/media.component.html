@@ -1,0 +1,23 @@
+<div class="main-container" *ngIf="mediaBannerData">
+    <img class="img-fluid" [src]="mediaBannerData[0]?.imageUrl" alt="media-img">
+</div>
+
+<div class="media-container py-5" *ngIf="mediaData">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-10 col-sm-12 col-md-10 mx-auto">
+                <div class="tabs-heading">
+                    <p class="text-center" *ngFor="let item of mediaData">
+                        <span [ngClass]="{'active-tab' : selectedTabId === item.url}"
+                            (click)="onClickTabHead(item.url)">{{item.title | uppercase}}</span>
+                    </p>
+                </div>
+                <div class="gallery">
+                    <div *ngFor="let image of galleryImg">
+                        <img [src]="image.imageUrl" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

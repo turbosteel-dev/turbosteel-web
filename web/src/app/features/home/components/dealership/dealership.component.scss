@@ -1,0 +1,40 @@
+.line {
+    width: 100%;
+}
+
+.content {
+    background-color: var(--ts-primary-color);
+    color: var(--ts-accent-color1);
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 20px;
+}
+
+h2 {
+    font-weight: 700;
+    background-image: linear-gradient(to right, #1f579f, #f0312d 80%);
+    color: transparent;
+    background-clip: text;
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 26px;
+    min-height: 90px;
+}
+
+button {
+    color: var(--ts-accent-color1);
+    font-weight: 600;
+    padding: 7px 20px;
+    border-radius: 30px;
+    background-color: var(--ts-primary-color);
+    border: 1px solid var(--ts-accent-color1);
+}
+
+button:hover {
+    background-color: var(--ts-accent-color1);
+    color: var(--ts-primary-color);
+}

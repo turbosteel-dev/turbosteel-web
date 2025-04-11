@@ -1,0 +1,35 @@
+.manufacture-container {
+    background-image: url("^/assets/images/home/procee.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--ts-accent-color1);
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.content {
+    backdrop-filter: blur(15px) !important;
+    margin: 10px 0;
+    height: 100%;
+    border-radius: 20px;
+    transition: 0.5s all;
+}
+
+.content:hover {
+    background-color: #ffffff4d !important;
+    transition: 0.1s;
+}
+
+img {
+    border-radius: 20px 20px 0 0;
+    height: 180px;
+}
+
+.content>div {
+    padding: 10px 14px;
+}

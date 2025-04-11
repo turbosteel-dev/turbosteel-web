@@ -1,0 +1,18 @@
+<div class="banner-container" *ngIf="productBannerData">
+    <img class="img-fluid" [src]="productBannerData.imageUrl" alt="banner-img">
+</div>
+
+<div class="main-container py-5" *ngIf="productDetailData">
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <div *ngIf="productDetailData.imageUrl">
+                    <img class="product-img" [src]="productDetailData.imageUrl" alt="product">
+                </div>
+                <div class="ms-3">
+                    <p [innerHtml]="safeProductDesc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

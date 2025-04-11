@@ -1,0 +1,31 @@
+.product-container {
+    background-color: #f3f8ff;
+}
+
+h2 {
+    font-weight: 700;
+    background-image: linear-gradient(to right, #1f579f, #f0312d 80%);
+    color: transparent;
+    background-clip: text;
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.content>div {
+    flex: 47%;
+    margin: 20px 15px;
+    border: 1px solid var(--ts-primary-color);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.content>div:hover {
+    background-color: var(--ts-accent-color1);
+}
+

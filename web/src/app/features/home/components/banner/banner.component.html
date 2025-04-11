@@ -1,0 +1,7 @@
+<div class="banner-container">
+    <ngx-slick-carousel #slickModal class="carousel" [config]="slideConfig">
+        <div ngxSlickItem aria-hidden="true" *ngFor="let item of bannerData" class="slide">
+            <img class="img-fluid" src="{{item.imageUrl}}" alt="banner-img">
+        </div>
+    </ngx-slick-carousel>
+</div>

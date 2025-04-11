@@ -1,0 +1,22 @@
+<div class="testimonial-container mb-4 py-5" *ngIf="testimonialData">
+    <div class="heading text-center">
+        <h2>TESTIMONIAL</h2>
+    </div>
+    <div class="carousel-container">
+        <ngx-slick-carousel #slickModal class="carousel text-center" [config]="slideConfig">
+            <div class="mb-4" ngxSlickItem *ngFor="let item of testimonialData">
+                <div class="d-flex justify-content-center">
+                    <img class="img-fluid" [src]="item.imageUrl" alt="client-img">
+                </div>
+                <p class="py-3">{{item.description}}</p>
+                <h4 class="mb-0">{{item.title}}</h4>
+            </div>
+        </ngx-slick-carousel>
+        <div class="custom-prev" (click)="slickModal.slickPrev()">
+            <img src="assets/icons/left.svg" alt="left">
+        </div>
+        <div class="custom-next" (click)="slickModal.slickNext()">
+            <img src="assets/icons/right.svg" alt="right">
+        </div>
+    </div>
+</div>

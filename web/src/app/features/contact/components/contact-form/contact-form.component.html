@@ -1,0 +1,33 @@
+<div class="form-container pt-4 pb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="text-center">GOT A QUESTION?</h2>
+            <div class="col-xl-9 col-lg-11 col-sm-12 col-md-10 pt-4">
+                <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <div class="form-content">
+                        <div class="form-input">
+                            <img class="icons" src="assets/icons/user-solid.svg" alt="user">
+                            <input type="text" name="name" formControlName="name" placeholder="Full Name">
+                        </div>
+                        <div class="form-input">
+                            <img class="icons" src="assets/icons/phone-solid.svg" alt="call">
+                            <input type="text" name="phone" formControlName="phone" placeholder="Phone Number">
+                        </div>
+                        <div class="form-input">
+                            <img class="icons" src="assets/icons/envelope-solid.svg" alt="email">
+                            <input type="text" name="email" formControlName="email" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <img class="icons" src="assets/icons/pen-solid.svg" alt="pen">
+                        <textarea name="message" formControlName="message" id="message" placeholder="Your Message" rows="1"></textarea>
+                    </div>
+                    <div class="btn-buttons">
+                        <button type="submit" class="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

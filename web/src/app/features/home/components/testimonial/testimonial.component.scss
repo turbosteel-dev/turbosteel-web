@@ -1,0 +1,80 @@
+.testimonial-container {
+    background-color: var(--ts-primary-color);
+    color: var(--ts-accent-color1);
+}
+
+.carousel-container {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+img {
+    height: 120px;
+    border-radius: 50%;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 5%;
+}
+
+.heading {
+    position: relative;
+}
+
+.heading:after {
+    content: ' ';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 40px;
+    width: 180px;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.custom-prev,
+.custom-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-size: 19px;
+}
+
+.custom-prev {
+    left: -10%;
+}
+
+.custom-next {
+    right: -10%;
+}
+
+.custom-prev img,
+.custom-next img {
+    width: 32px;
+    height: 32px;
+}
+
+@media (max-width: 767px) {
+    .carousel {
+        width: 100%;
+    }
+}
