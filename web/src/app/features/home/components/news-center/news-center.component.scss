@@ -1,9 +1,9 @@
 h2 {
-    font-weight: 700;
+    font-weight: 900;
     background-image: linear-gradient(to right, #1f579f, #f0312d 90%);
     color: transparent;
     background-clip: text;
-    font-size: 42px;
+    font-size: 40px;
     text-transform: uppercase;
 }
 
@@ -17,19 +17,20 @@ img {
 
 span {
     color: var(--ts-primary-color);
-    font-size: 14px;
+    font-size: 12px;
 }
 
-h5 {
-    font-size: 19px;
+h6 {
+    font-size: 16px;
 }
 
 p {
     color: #667085;
+    font-size: 13.5px;
 }
 
 button {
-    font-size: 14px;
+    font-size: 13px;
     padding: 2px 10px;
     border-radius: 16px;
     border: none;
@@ -53,6 +54,6 @@ button {
 
 .button {
     padding: 8px 30px;
-    font-size: 17px;
+    font-size: 16px;
     border-radius: 30px;
 }

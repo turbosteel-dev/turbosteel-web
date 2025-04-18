@@ -1,11 +1,30 @@
 <div class="main-container" *ngIf="certificationBannerData">
-    <img class="img-fluid" [src]="certificationBannerData[0]?.imageUrl" alt="mission">
+    <img class="img-fluid" [src]="certificationBannerData[0]?.imageUrl" alt="certification-banner">
 </div>
 
-<div class="certification-container py-5">
+<div class="certification-container py-5" *ngIf="certificationCategoryData">
     <div class="container">
         <div class="row">
-
+            <div class="tabs">
+                <ul>
+                    <li [ngClass]="{'active-tab' : selectedUrl === item.url}" *ngFor="let item of certificationCategoryData" (click)="onClickCategory(item.url)">
+                        {{item.title | uppercase}}
+                    </li>
+                </ul>
+                <div class="line"></div>
+            </div>
+            <div class="content text-center">
+                <div *ngFor="let item of certificationResponseData">
+                    <img *ngIf="item.imageUrl && !item.filesData?.endsWith('.pdf')" class="img-fluid" [src]="item.imageUrl" alt="certificates">
+                    <div *ngIf="item.filesData?.endsWith('.pdf')" class="pdf-preview">
+                       <iframe [src]="sanitizeUrl(item.filesData)" height="380" frameborder="0"></iframe>
+                    </div>
+                    <p class="mt-2">{{item.title}}</p>
+                    <div *ngIf="item.filesData?.endsWith('.pdf')" >
+                        <a href="{{item.filesData}}" target="_blank"> <button class="button">DOWNLOAD PDF</button></a>                       
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

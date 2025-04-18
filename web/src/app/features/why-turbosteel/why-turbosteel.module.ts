@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 
 import { WhyTurbosteelRoutingModule } from './why-turbosteel-routing.module';
 import { WhyTurbosteelComponent } from './why-turbosteel.component';
@@ -23,7 +24,8 @@ import { InhouseLaboratoryComponent } from './components/inhouse-laboratory/inho
   ],
   imports: [
     CommonModule,
-    WhyTurbosteelRoutingModule
+    WhyTurbosteelRoutingModule,
+    SharedModule
   ]
 })
 export class WhyTurbosteelModule { }

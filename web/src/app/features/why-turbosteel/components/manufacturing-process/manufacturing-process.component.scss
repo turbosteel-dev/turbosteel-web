@@ -1,7 +1,25 @@
 h2 {
-    background-image: linear-gradient(to right, #1f579f, #f0312d 80%);
-    color: transparent;
+    font-size: 42px;
+    font-weight: 900;
+    background: var(--grad, linear-gradient(90deg, #1f579f 0%, #f0312d 100%));
     background-clip: text;
-    font-size: 34px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-transform: uppercase;
+}
+
+.content{
+    height: 90vh;
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+}
+.line{
+    border-bottom: 1px solid var(--ts-accent-color2);
+}
+.line1{
+    border-bottom: 1.4px solid rgba(48, 56, 73, .2);
+}
+.content p{
+    font-size: 13px;
 }

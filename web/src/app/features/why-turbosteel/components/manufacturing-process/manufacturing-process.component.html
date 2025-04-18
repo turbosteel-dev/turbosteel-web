@@ -1,20 +1,25 @@
 <div class="main-container" *ngIf="manufactureBannerData">
     <img class="img-fluid" [src]="manufactureBannerData[0]?.imageUrl" alt="mission">
 </div>
-<div class="manufacture-container py-5">
+<div class="manufacture-container py-5" *ngIf="manufactureData">
     <div class="container">
         <div class="row">
-            <h2 class="text-center">Manufacturing Process</h2>
+            <h2 class="text-center mb-5">Manufacturing Process</h2>
             <div class="col-xl-9 col-lg-9 col-sm-12 col-md-8 text-center">
-                <img src="" alt="">
-                <h5>Sponge Iron Manufacturing</h5>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore optio doloremque eos modi esse ducimus? Laboriosam nam consequuntur cum ducimus.</p>
+                <div *ngIf="manufactureCategory">
+                    <img class="img-fluid" [src]="manufactureCategory?.imageUrl" alt="manufacture-img">
+                    <h5 class="my-3">{{manufactureCategory?.title}}</h5>
+                    <p [innerHtml]="safeProductmanufacture"></p>
+                </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-sm-12 col-md-4">
-                <h4>Why Turbosteel</h4>
-                <div>
-                    <img class="img-fluid" src="" alt="">
-                    <p>title</p>
+            <div class="col-xl-3 col-lg-3 col-sm-12 col-md-4 content text-center">
+                <h5><strong>Why Turbosteel</strong></h5>
+                <div class="line"></div>
+                <div class="my-1" *ngFor="let item of manufactureData; let i=index;"
+                    (click)="onClickManufactureCategory(item.manufacture_category_id)">
+                    <img [src]="item.imageUrl" class="img-fluid" alt="manufacture-img">
+                    <p class="mt-2">{{item.title}}</p>
+                    <div class="line1"></div>
                 </div>
             </div>
         </div>

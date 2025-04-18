@@ -5,7 +5,7 @@
 <div class="overview-container py-5" *ngIf="overviewData">
     <div class="container">
         <div class="row justify-content-center">
-            <h3 class="text-center mb-4">{{overviewData[0]?.title | uppercase}}</h3>
+            <h3 class="text-center mb-4"><strong>{{overviewData[0]?.title | uppercase}}</strong></h3>
             <div class="col-xl-6 col-lg-6 col-sm-12 col-md-6">
                 <img class="img-fluid" [src]="overviewData[0]?.imageUrl" alt="mine-img">
             </div>

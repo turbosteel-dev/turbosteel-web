@@ -5,7 +5,7 @@
             <div class="col-xl-3 col-lg-3 col-sm-12 col-md-4 content" *ngFor="let item of newscenterData">
                 <img class="img-fluid" [src]="item.imageUrl" alt="news-img">
                 <p><span><strong>{{item.date | date:'dd MMM yyyy'}}</strong></span></p>
-                <h5><strong>{{item.title | uppercase}}</strong></h5>
+                <h6><strong>{{item.title | uppercase}}</strong></h6>
                 <p>{{item.description}}</p>
                 <div class="d-flex align-items-center">
                     <a href="{{data.url}}" *ngFor="let data of item.lists; let i=index;">

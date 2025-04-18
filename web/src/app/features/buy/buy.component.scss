@@ -1,0 +1,50 @@
+.buy-container {
+    background-color: rgba(228, 228, 228, 0.2);
+}
+
+.content {
+    padding: 30px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--ts-accent-color1);
+    height: 100%;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+    outline: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--ts-accent-color2);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 7px 10px;
+    text-align: left;
+    color: #23222d;
+    font-size: 13px;
+}
+h4{
+    color: #666;
+    font-weight: 600;
+    letter-spacing: .3px;
+}

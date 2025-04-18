@@ -6,8 +6,9 @@
 
 span {
     margin: 10px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .gallery {
@@ -54,7 +55,7 @@ span {
 .active-tab {
     border-bottom: 2px solid var(--ts-primary-color);
     padding: 8px;
-    font-weight: 600;
+    font-weight: 900;
 }
 
 .carousel-control-next,

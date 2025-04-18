@@ -7,8 +7,8 @@
 }
 
 h2 {
-    font-weight: 700;
-    font-size: 42px;
+    font-weight: 900;
+    font-size: 40px;
     text-transform: uppercase;
 }
 
@@ -32,4 +32,15 @@ img {
 
 .content>div {
     padding: 10px 14px;
+}
+
+p {
+    font-size: 14px;
+}
+
+h6 {
+    min-height: 76px;
+}
+button{
+    font-size: 15px;
 }

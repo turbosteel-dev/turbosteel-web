@@ -13,22 +13,30 @@ export class ManufacturingProcessComponent {
   manufactureUrl = '/api/manufacture/manufactureDetail'
   manufactureData: any;
   safeProductmanufacture: SafeHtml | undefined;
+  manufactureCategory: any;
 
   constructor(private http: HttpService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-   this.onLoadmanufacture();
+    this.onLoadmanufacture();
+    
   }
 
-  onLoadmanufacture(){
+  onLoadmanufacture() {
     this.http.get(this.manufactureBannerUrl).subscribe(response => {
       this.manufactureBannerData = response;
-      console.log(this.manufactureBannerData)
     });
-    // this.http.get(this.manufactureUrl).subscribe(response => {
-    //   this.manufactureData = response;
-    //   console.log(this.manufactureData)
-    //   this.safeProductmanufacture = this.sanitizer.bypassSecurityTrustHtml(this.manufactureData[0].description)
-    // });
+    this.http.get(this.manufactureUrl).subscribe(response => {
+      this.manufactureData = response;
+      console.log(this.manufactureData)
+      if (this.manufactureData) {
+        this.onClickManufactureCategory(this.manufactureData[0].manufacture_category_id);
+      }
+    });
+  }
+
+  onClickManufactureCategory(url: any) {
+    this.manufactureCategory = this.manufactureData.find((p: any) => p.manufacture_category_id === url);
+    this.safeProductmanufacture = this.sanitizer.bypassSecurityTrustHtml(this.manufactureCategory.description)
   }
 }

@@ -1,5 +1,5 @@
 <div class="main-container" *ngIf="contactBannerData">
-    <h1 class="py-5">{{contactBannerData[0].title | uppercase}}</h1>
+    <h2 class="py-5">{{contactBannerData[0].title | uppercase}}</h2>
 </div>
 
 <div class="contact-container py-5" *ngIf="contactAddressData">
@@ -8,14 +8,14 @@
             <div class="col-xl-3 col-lg-3 col-sm-12 col-md-6 d-flex content">
                 <img class="img-fluid icon-img" [src]="contactAddressData[0].imageUrl" alt="building">
                 <div class="ms-3">
-                    <h5><strong>{{contactAddressData[0].title | uppercase}}</strong></h5>
+                    <h6><strong>{{contactAddressData[0].title | uppercase}}</strong></h6>
                     <p>{{contactAddressData[0].lists[0].list_title}}</p>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-3 col-sm-12 col-md-6 d-flex content">
                 <img class="img-fluid icon-img" [src]="contactAddressData[1]?.imageUrl" alt="call">
                 <div class="ms-3">
-                    <h5><strong>{{contactAddressData[1].title | uppercase}}</strong></h5>
+                    <h6><strong>{{contactAddressData[1].title | uppercase}}</strong></h6>
                     <div *ngFor="let item of contactAddressData[1].lists">
                         <p class="mb-1"><a href="tel: {{item.url}}"> {{item.list_title}}</a></p>
                     </div>
@@ -24,7 +24,7 @@
             <div class="col-xl-3 col-lg-3 col-sm-12 col-md-6 d-flex content">
                 <img class="img-fluid icon-img" [src]="contactAddressData[2]?.imageUrl" alt="email">
                 <div class="ms-3">
-                    <h5><strong>{{contactAddressData[2].title | uppercase}}</strong></h5>
+                    <h6><strong>{{contactAddressData[2].title | uppercase}}</strong></h6>
                     <p><a href="mailto: {{contactAddressData[2].lists[0].url}}">{{contactAddressData[2].lists[0].list_title}}</a></p>
                 </div>
             </div>

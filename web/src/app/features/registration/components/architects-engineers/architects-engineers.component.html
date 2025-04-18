@@ -1,0 +1,124 @@
+<div class="main-container" *ngIf="architectBannerData">
+    <img class="img-fluid" [src]="architectBannerData[0]?.imageUrl" alt="banner">
+</div>
+
+<div class="registration-container py-5">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mb-4">Architects & Engineers Form Registration</h2>
+            <form class="col-xl-10 col-lg-10 col-sm-12 col-md-12 mx-auto form-container" 
+            [formGroup]="architectEngineersForm" method="POST" enctype="multipart/form-data" (ngSubmit)="onSubmit()">
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="name" name="name" placeholder="Name"
+                        [class.invalid]="architectEngineersForm.get('name')?.invalid && architectEngineersForm.get('name')?.touched">
+                        <small *ngIf="architectEngineersForm.get('name')?.invalid && architectEngineersForm.get('name')?.touched">
+                            Name is required
+                        </small> 
+                    </div>
+                    <div>
+                        <input type="tel" formControlName="phone" name="phone" placeholder="Phone" minlength="10" maxlength="12" pattern="\d{10}"
+                        [class.invalid]="architectEngineersForm.get('phone')?.invalid && architectEngineersForm.get('phone')?.touched">
+                        <small *ngIf="architectEngineersForm.get('phone')?.invalid && architectEngineersForm.get('phone')?.touched">
+                            Phone Number is required (10 digits)
+                        </small>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="profession" name="profession" placeholder="Profession">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="dob" name="dob" placeholder="DOB">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="email" formControlName="email" name="email" placeholder="Email"
+                        [class.invalid]="architectEngineersForm.get('email')?.invalid && architectEngineersForm.get('email')?.touched">
+                        <small *ngIf="architectEngineersForm.get('email')?.invalid && architectEngineersForm.get('email')?.touched">
+                            Enter valid email address
+                        </small>
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="anniversaryDate" 
+                        name="anniversaryDate" placeholder="Anniversary Date">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="companyName" name="companyName"
+                            placeholder="Company Name">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="houseNumber" name="houseNumber"
+                            placeholder="House number / Street Name">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="city" name="city" placeholder="City">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="state" name="state" placeholder="State">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="pincode" name="pincode" placeholder="Pincode">
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <textarea formControlName="remarks" name="remarks" rows="2" placeholder="Remarks"></textarea>
+                    </div>
+                </div>
+                <h6 class="m-2">SALES OFFICER DETAILS</h6>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="name_of_sales" name="name_of_sales" placeholder="Name of Sales">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="sales_place" name="sales_place" placeholder="Place">
+                    </div>
+                </div>
+                <h6 class="m-2">DEALER DETAILS</h6>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="name_of_dealer" name="name_of_dealer" placeholder="Name of Dealer">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="dealer_place" name="dealer_place" placeholder="Place">
+                    </div>
+                </div>
+                <h6 class="m-2">UPLOAD</h6>
+                <div class="form-uploads">
+                    <div>
+                        <h6>PHOTOGRAPGH*</h6>
+                        <p>Upload Your Photograph</p>
+                        <input type="file" #photoInput  (change)="onFileChange($event, 'photograph')" placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                    <div>
+                        <h6>ID PROOF*</h6>
+                        <p>Any ID Proof</p>
+                        <input type="file" #idProofInput (change)="onFileChange($event, 'idProof')" name="idProof" placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                    <div>
+                        <h6>ADDRESS PROOF*</h6>
+                        <p>Any ID Proof</p>
+                        <input type="file" #addressProofInput name="addressProof" (change)="onFileChange($event, 'addressProof')" placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                </div>
+               <div class="text-center mt-4">
+                <button type="submit" class="submit-button">Submit</button>
+               </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+<div class="main-container" *ngIf="masonBarbenderBannerData">
+    <img class="img-fluid" [src]="masonBarbenderBannerData[0]?.imageUrl" alt="banner">
+</div>
+
+<div class="registration-container py-5">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mb-4">Masons & Barbenders Form Registration</h2>
+            <form method="POST" class="col-xl-10 col-lg-10 col-sm-12 col-md-12 mx-auto form-container"
+                [formGroup]="masonbarbendersForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="name" name="name" placeholder="Name"
+                            [class.invalid]="masonbarbendersForm.get('name')?.invalid && masonbarbendersForm.get('name')?.touched">
+                        <small
+                            *ngIf="masonbarbendersForm.get('name')?.invalid && masonbarbendersForm.get('name')?.touched">
+                            Name is required
+                        </small>
+                    </div>
+                    <div>
+                        <input type="tel" formControlName="phone" name="phone" placeholder="Phone" minlength="10"
+                            maxlength="12"
+                            [class.invalid]="masonbarbendersForm.get('phone')?.invalid && masonbarbendersForm.get('phone')?.touched">
+                        <small
+                            *ngIf="masonbarbendersForm.get('phone')?.invalid && masonbarbendersForm.get('phone')?.touched">
+                            Phone Number is required (10 digits)
+                        </small>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <select formControlName="type" name="type" id="">
+                            <option value="" selected disabled>Select</option>
+                            <option value="barbender">Barbender</option>
+                            <option value="mason">Mason</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                            formControlName="dob" name="dob" placeholder="DOB">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="email" formControlName="email" name="email" placeholder="Email"
+                            [class.invalid]="masonbarbendersForm.get('email')?.invalid && masonbarbendersForm.get('email')?.touched">
+                        <small
+                            *ngIf="masonbarbendersForm.get('email')?.invalid && masonbarbendersForm.get('email')?.touched">
+                            Enter valid email address
+                        </small>
+                    </div>
+                    <div>
+                        <input type="text" formControlName="houseNumber" name="houseNumber"
+                            placeholder="House number / Street Name">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="city" name="city" placeholder="City">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="state" name="state" placeholder="State">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="pincode" name="pincode" placeholder="Pincode">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                            formControlName="aniversaryDate" name="aniversaryDate" placeholder="Anniversary Date">
+                    </div>
+                </div>
+                <h6 class="m-2">BUSINESS DETAILS</h6>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="name_of_employee" name="name_of_employee"
+                            placeholder="No of Employees working under you">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="name_of_projects" name="name_of_projects"
+                            placeholder="No of Projects at any time">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="dealer_associate" name="dealer_associate"
+                            placeholder="Dealer associated with">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="operation_area" name="operation_area"
+                            placeholder="Operational Area">
+                    </div>
+                </div>
+                <h6 class="m-2">SALES OFFICER DETAILS</h6>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="name_of_officer" name="name_of_officer"
+                            placeholder="Name of Sales Officer">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="place" name="place" placeholder="Place">
+                    </div>
+                </div>
+                <h6 class="m-2">UPLOAD</h6>
+                <div class="form-uploads">
+                    <div>
+                        <h6>PHOTOGRAPGH*</h6>
+                        <p>Upload Your Photograph</p>
+                        <input type="file" #photoInput (change)="onFileChange($event, 'photograph')"
+                            placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                    <div>
+                        <h6>ID PROOF*</h6>
+                        <p>Any ID Proof</p>
+                        <input type="file" #idProofInput (change)="onFileChange($event, 'idProof')" name="idProof"
+                            placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                    <div>
+                        <h6>ADDRESS PROOF*</h6>
+                        <p>Any ID Proof</p>
+                        <input type="file" #addressProofInput name="addressProof"
+                            (change)="onFileChange($event, 'addressProof')" placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

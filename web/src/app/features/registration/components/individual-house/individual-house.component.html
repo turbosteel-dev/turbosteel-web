@@ -1,0 +1,84 @@
+<div class="main-container" *ngIf="individualHouseBannerData">
+    <img class="img-fluid" [src]="individualHouseBannerData[0]?.imageUrl" alt="banner">
+</div>
+
+<div class="registration-container py-5">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mb-4">Individual House Form Registration</h2>
+            <form method="POST" class="col-xl-10 col-lg-10 col-sm-12 col-md-12 mx-auto form-container" [formGroup]="houseForm"
+                (ngSubmit)="onSubmit()">
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="name" name="name" placeholder="Name"
+                            [class.invalid]="houseForm.get('name')?.invalid && houseForm.get('name')?.touched">
+                        <small *ngIf="houseForm.get('name')?.invalid && houseForm.get('name')?.touched">
+                            Name is required
+                        </small>
+                    </div>
+                    <div>
+                        <input type="tel" formControlName="phone" name="phone" placeholder="Phone" minlength="10"
+                            maxlength="12" pattern="\d{10}"
+                            [class.invalid]="houseForm.get('phone')?.invalid && houseForm.get('phone')?.touched">
+                        <small *ngIf="houseForm.get('phone')?.invalid && houseForm.get('phone')?.touched">
+                            Phone Number is required (10 digits)
+                        </small>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="number" formControlName="age" name="age" placeholder="Age">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="professional" name="professional" placeholder="Profession">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="email" formControlName="email" name="email" placeholder="Email"
+                            [class.invalid]="houseForm.get('email')?.invalid && houseForm.get('email')?.touched">
+                        <small *ngIf="houseForm.get('email')?.invalid && houseForm.get('email')?.touched">
+                            Enter valid email address
+                        </small>
+                    </div>
+                    <div>
+                        <input type="text" formControlName="subject" name="subject" placeholder="Subject">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="companyName" name="companyName" placeholder="Company Name">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="houseNumber" name="houseNumber"
+                            placeholder="House number / Street Name">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="city" name="city" placeholder="City">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="state" name="state" placeholder="State">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="pincode" name="pincode" placeholder="Pincode">
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <textarea formControlName="remarks" name="remarks" rows="2" placeholder="Remarks"></textarea>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -9,6 +9,7 @@
                     <span [ngClass]="{'active-tab' : selectedId === item.url}" (click)="onClickTab(item.url)">{{item.title | uppercase}}</span>
                 </p>
             </div>
+            <hr>
             <div class="gallery" *ngIf="csrGallery">
                 <div class="row">
                     <div class=" col-xl-4 col-lg-4 main-img-container" *ngFor="let data of csrGallery; let i = index">
@@ -18,6 +19,7 @@
                         </a>
                     </div>
                 </div>
+             
                 <div class="modal fade lightbox-modal mt-4" id="lightboxModal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl">
                         <div class="modal-content">

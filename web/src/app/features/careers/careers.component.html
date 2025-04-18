@@ -1,0 +1,18 @@
+<div class="main-container" *ngIf="careerBannerData">
+    <img class="img-fluid" [src]="careerBannerData[0]?.imageUrl" alt="career-banner">
+</div>
+
+<div class="career-container py-5" *ngIf="careerData">
+    <div class="container">
+        <div class="row">
+            <h3 class="text-center mb-3"><strong>CURRENT OPENINGS</strong></h3>
+            <div class="col-xl-6 col-lg-6 col-sm-12 col-md-6" *ngFor="let item of careerData">
+                <div class="career-item">
+                    <h6><strong>{{item.title | uppercase}}</strong></h6>
+                    <p>{{item.sub_description}}</p>
+                    <a href=""> <button class="button">Apply Now</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

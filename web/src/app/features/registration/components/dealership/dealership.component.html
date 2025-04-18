@@ -1,0 +1,310 @@
+<div class="main-container" *ngIf="dealershipBannerData">
+    <img class="img-fluid" [src]="dealershipBannerData[0]?.imageUrl" alt="banner">
+</div>
+
+<div class="registration-container py-5">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mb-4">Dealership Form Registration</h2>
+            <form method="POST" class="col-xl-10 col-lg-10 col-sm-12 col-md-12 mx-auto form-container" [formGroup]="dealershipForm"
+                (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+                <h6 class="m-2"><strong>COMPANY INFORMATION</strong></h6>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="companyName" name="companyName"
+                            placeholder="Company Name">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="officeAddress" name="officeAddress"
+                            placeholder="Office Address">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="city" name="city" placeholder="City">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="state" name="state" placeholder="State">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="pincode" name="pincode" placeholder="Pincode">
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="name" name="name" placeholder="Name"
+                        [class.invalid]="dealershipForm.get('name')?.invalid && dealershipForm.get('name')?.touched">
+                        <small *ngIf="dealershipForm.get('name')?.invalid && dealershipForm.get('name')?.touched">
+                            Name is required
+                        </small> 
+                    </div>
+                    <div>
+                        <input type="tel" formControlName="phone" name="phone" placeholder="Phone" minlength="10" maxlength="12"
+                        [class.invalid]="dealershipForm.get('phone')?.invalid && dealershipForm.get('phone')?.touched">
+                        <small *ngIf="dealershipForm.get('phone')?.invalid && dealershipForm.get('phone')?.touched">
+                            Phone Number is required (10 digits)
+                        </small>
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="email" formControlName="email" name="email" placeholder="Email"
+                        [class.invalid]="dealershipForm.get('email')?.invalid && dealershipForm.get('email')?.touched">
+                        <small *ngIf="dealershipForm.get('email')?.invalid && dealershipForm.get('email')?.touched">
+                            Enter valid email address
+                        </small>
+                    </div>
+                    <div>
+                        <input type="text" formControlName="gstNumber" name="gstNumber" placeholder="GST Number">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="panNumber" name="panNumber" placeholder="PAN Number">
+                    </div>
+                    <div>
+                        <select formControlName="typeOfFirm" name="typeOfFirm" id="">
+                            <option value="" selected disabled>Type of firm</option>
+                            <option value="proprietor">Proprietor</option>
+                            <option value="private-limited">Private Limited</option>
+                        </select>
+                    </div>
+                </div>
+                <h6 class="m-2"><strong>OWNER'S INFORMATION</strong></h6>
+                <span class="mx-2"><strong>1st OWNER'S DETAILS</strong></span>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="firstOwnerName" name="firstOwnerName" placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="tel" formControlName="firstOwnerPhone" name="firstOwnerPhone" placeholder="Phone">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="email" formControlName="firstOwnerEmail" name="firstOwnerEmail" placeholder="Email">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="firstOwnerPlace" name="firstOwnerPlace" placeholder="Place">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="firstOwnerHouseNumber" name="firstOwnerHouseNumber"
+                            placeholder="House number / Street Name">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="firstOwnerCity" name="firstOwnerCity" placeholder="City">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="firstOwnerState" name="firstOwnerState" placeholder="State">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="firstOwnerPincode" name="firstOwnerPincode" placeholder="Pincode">
+                    </div>
+                </div>
+                <span class="mx-2"><strong>2nd OWNER'S DETAILS</strong></span>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="secondOwnerName" name="secondOwnerName" placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="tel" formControlName="secondOwnerPhone" name="secondOwnerPhone" placeholder="Phone">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="email" formControlName="secondOwnerEmail" name="secondOwnerEmail" placeholder="Email">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="secondOwnerPlace" name="secondOwnerPlace" placeholder="Place">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="secondOwnerHouseNumber" name="secondOwnerHouseNumber"
+                            placeholder="House number / Street Name">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="secondOwnerCity" name="secondOwnerCity" placeholder="City">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="secondOwnerState" name="secondOwnerState" placeholder="State">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="secondOwnerPincode" name="secondOwnerPincode" placeholder="Pincode">
+                    </div>
+                </div>
+                <span class="mx-2"><strong>1st Owner Greeting Information</strong></span>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="firstOwnerGreetingSpouseName" name="firstOwnerGreetingSpouseName" placeholder="Spouse Name">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="firstOwnerGreetingSpouseDob" name="firstOwnerGreetingSpouseDob" placeholder="DOB">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="firstOwnerGreetingAniversaryDate" name="firstOwnerGreetingAniversaryDate" placeholder="Anniversary Date">
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="firstOwnerGreetingChildOneName" name="firstOwnerGreetingChildOneName"
+                            placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="firstOwnerGreetingChildOneDob" name="firstOwnerGreetingChildOneDob" placeholder="DOB">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="firstOwnerGreetingChildTwoname" name="firstOwnerGreetingChildTwoname"
+                            placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="firstOwnerGreetingChildTwoDob" name="firstOwnerGreetingChildTwoDob" placeholder="DOB">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="firstOwnerGreetingChildThreename" name="firstOwnerGreetingChildThreename"
+                            placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="firstOwnerGreetingChildThreeDob" name="firstOwnerGreetingChildThreeDob" placeholder="DOB">
+                    </div>
+                </div>
+                <span class="mx-2"><strong>2st Owner Greeting Information</strong></span>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="secondOwnerGreetingSpouseName" name="secondOwnerGreetingSpouseName" placeholder="Spouse Name">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="secondOwnerGreetingSpouseDob" name="secondOwnerGreetingSpouseDob" placeholder="DOB">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="secondOwnerGreetingAniversaryDate" name="secondOwnerGreetingAniversaryDate" placeholder="Anniversary Date">
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="secondOwnerGreetingChildOneName" name="secondOwnerGreetingChildOneName"
+                            placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="secondOwnerGreetingChildOneDob" name="secondOwnerGreetingChildOneDob" placeholder="DOB">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text"  formControlName="secondOwnerGreetingChildTwoname" name="secondOwnerGreetingChildTwoname"
+                            placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="secondOwnerGreetingChildTwoDob" name="secondOwnerGreetingChildTwoDob" placeholder="DOB">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="secondOwnerGreetingChildThreename" name="secondOwnerGreetingChildThreename"
+                            placeholder="Name">
+                    </div>
+                    <div>
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" formControlName="secondOwnerGreetingChildThreeDob" name="secondOwnerGreetingChildThreeDob" placeholder="DOB">
+                    </div>
+                </div>
+                <h6 class="m-2"><strong>BANK INFORMATION</strong></h6>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="bankName" name="bankName"
+                            placeholder="Bank Name">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="branch" name="branch" placeholder="Branch">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="ifsc" name="ifsc"
+                            placeholder="IFSC Code">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="account_number" name="account_number" placeholder="Account Number">
+                    </div>
+                </div>
+                <h6 class="m-2"><strong>DEPOT / GODOWN INFORMATION</strong></h6>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="depot_address" name="depot_address"
+                            placeholder="Depot / Godown Address">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="depot_city" name="depot_city" placeholder="City">
+                    </div>
+                </div>
+                <div class="form-content">
+                    <div>
+                        <input type="text" formControlName="depot_state" name="depot_state"
+                            placeholder="State">
+                    </div>
+                    <div>
+                        <input type="text" formControlName="depot_zip" name="depot_zip" placeholder="Zip / Postal Code">
+                    </div>
+                </div>
+                <h6 class="m-2"><strong>UPLOAD</strong></h6>
+                <div class="form-uploads">
+                    <div>
+                        <h6>PHOTOGRAPGH*</h6>
+                        <p>Upload Your Photograph</p>
+                        <input type="file" #photoInput  (change)="onFileChange($event, 'photograph')" placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                    <div>
+                        <h6>GST CERTIFICATE*</h6>
+                        <p>Any ID Proof</p>
+                        <input type="file" #gstCertificateInput (change)="onFileChange($event, 'gstCertificate')" name="gstCertificate" placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                    <div>
+                        <h6>PAN CARD*</h6>
+                        <p>Any ID Proof</p>
+                        <input type="file" #panCardInput name="panCard" (change)="onFileChange($event, 'panCard')" placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                </div>
+                <div class="form-uploads">
+                    <div>
+                        <h6>SHOP PHOTO*</h6>
+                        <p>Any ID Proof</p>
+                        <input type="file" #shopPhotoInput name="shopPhoto" (change)="onFileChange($event, 'shopPhoto')" placeholder="Upload File">
+                        <p class="restrict">Accepted file types: .jpg, .jpeg, .png</p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

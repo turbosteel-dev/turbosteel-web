@@ -8,13 +8,24 @@ h2 {
 
 .form-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.form-content>div {
+    margin: 12px 8px;
+    width: 100%;
+}
+
+.form-content1>div {
+    margin: 12px 8px;
 }
 
 .form-input {
     border: 1px solid var(--ts-accent-color2);
     padding: 8px 10px;
-    margin: 12px 10px;
+    display: flex;
+    align-items: center;
+    background-color: var(--ts-accent-color1);
 }
 
 
@@ -32,6 +43,7 @@ input {
 input::placeholder,
 textarea::placeholder {
     color: var(--ts-accent-color2);
+    font-weight: 600;
 }
 
 textarea {
@@ -56,6 +68,12 @@ textarea {
     border-radius: 4px;
 }
 
+small {
+    color: red;
+    font-size: 12px;
+}
+
+
 @media (max-width: 991px) {
     .form-content {
         display: block;
@@ -64,7 +82,8 @@ textarea {
     .form-content .form-input {
         width: auto;
     }
-    textarea{
+
+    textarea {
         width: 85%;
     }
 }

@@ -25,7 +25,7 @@ const routes: Routes = [
         component: CuttingEdgeTechnologyComponent
       },
       {
-        path:'advantages',
+        path:'turbosteel-advantage',
         component: AdvantagesComponent
       },
       {
@@ -33,7 +33,7 @@ const routes: Routes = [
         component: ManufacturingProcessComponent
       },
       {
-        path:'in-house-laboratory',
+        path:'in-house-labouratory',
         component: InhouseLaboratoryComponent
       }
     ]

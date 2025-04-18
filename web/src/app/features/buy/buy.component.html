@@ -1,0 +1,63 @@
+<!-- <div class="main-container" *ngIf="visionBannerData">
+    <img class="img-fluid" [src]="visionBannerData[0]?.imageUrl" alt="mission">
+</div>  -->
+
+<div class="buy-container py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-5 col-sm-12 col-md-6">
+                <div class="content">
+                    <h4 class="text-center mb-4">LOCATION SEARCH</h4>
+                    <form class="form-container" [formGroup]="buyForm" (ngSubmit)="onSubmit()" action="">
+                        <div class="form-content">
+                            <select type="text" formControlName="state" name="state" placeholder="Select State">
+                                <option value="" selected disabled>Select State</option>
+                                <option value="karnataka">Karnataka</option>
+                                <option value="bihar">Bihar</option>
+                                <option value="kerala">Kerala</option>
+                            </select>
+                        </div>
+                        <div class="form-content">
+                            <select type="text" formControlName="district" name="district"
+                                placeholder="Select District">
+                                <option value="" selected disabled>Select District</option>
+                            </select>
+                        </div>
+                        <div class="form-content">
+                            <select type="text" formControlName="taluk" name="taluk" placeholder="Select State">
+                                <option value="" selected disabled>Select Taluk</option>
+                            </select>
+                        </div>
+                        <div class="form-content">
+                            <input type="text" formControlName="pincode" name="pincode" placeholder="Enter the Pincode">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-sm-12 col-md-6">
+                <div class="content">
+                    <h4 class="text-center mb-4">DEALER INFORMATION</h4>
+                    <table id="dealer-info-table">
+                        <thead>
+                            <tr>
+                                <th style="font-weight:bold;">Distributor Name / Dealer Name</th>
+                                <!--<th>Dealer Name</th>-->
+                                <th style="font-weight:bold;">Phone</th>
+                                <th style="font-weight:bold;">Email</th>
+                                <th style="font-weight:bold;">Pincode</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dealer-info-body">
+                           <tr>
+                            <td>abc</td>
+                            <td>abc</td>
+                            <td>abc</td>
+                            <td>abc</td>
+                           </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

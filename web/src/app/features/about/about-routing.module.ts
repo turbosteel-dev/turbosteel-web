@@ -21,11 +21,11 @@ const routes: Routes = [
         component: ChairmanMessageComponent
       },
       {
-        path: 'erm-overview',
+        path: 'erm-group',
         component: ErmOverviewComponent
       },
       {
-        path: 'csr',
+        path: 'csr-activities',
         component: CsrComponent 
       },
       {

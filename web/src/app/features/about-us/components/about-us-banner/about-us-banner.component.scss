@@ -1,0 +1,12 @@
+.main-container{
+    background-color: var(--ts-primary-color);
+    color: var(--ts-accent-color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+h1{
+    font-weight: 900;
+    font-size: 44px;
+}

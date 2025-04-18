@@ -18,14 +18,29 @@ ul {
 }
 
 li {
-    padding: 21px 25px;
+    padding: 28px 16px;
     font-weight: 500;
     cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+li:hover .dropdown-trigger {
+    background-color: var(--ts-primary-color);
+    color: var(--ts-accent-color1);
 }
 
 li a {
     text-decoration: none;
-    color: black;
+    color: var(--ts-accent-color2);
+    font-size: 13px;
+    font-weight: 600;
+    max-width: 280px;
+}
+
+li a:hover {
+    background-color: var(--ts-primary-color);
+    color: var(--ts-accent-color1) !important;
 }
 
 li:hover .chevron-img {
@@ -39,22 +54,39 @@ li:hover .chevron-img {
 
 .dropdown {
     display: none;
-    position: absolute;
-    top: 65px;
+    position: fixed;
+    top: 80px;
     left: 0;
-    width: max-content;
-    background-color: rgba(141, 153, 174, 0.9);
-    padding: 10px 18px;
+    right: 0;
+    border-top: 1px solid rgba(60, 100, 168, 0.9);
+    background-color: var(--ts-accent-color1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
     z-index: 10;
+}
+
+.dropdown-container {
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+
+    p {
+        font-size: 14px;
+        text-transform: none;
+    }
+}
+
+.dropdown-item {
+    white-space: normal;
 }
 
 .dropdown a {
     display: block;
-    padding: 8px 0;
-    color: white;
     text-decoration: none;
     font-weight: 500;
+    padding: 6px;
+    background-color: transparent;
+    transition: color 0.3s ease;
 }
 
 .dropdown a:hover {
@@ -88,6 +120,12 @@ button {
     border-radius: 30px;
     padding: 6px 22px;
     font-weight: 600;
+}
+
+button:hover {
+    color: var(--ts-accent-color1);
+    background-color: #E7342F;
+    border: var(--ts-accent-color1);
 }
 
 @media (max-width: 991px) {

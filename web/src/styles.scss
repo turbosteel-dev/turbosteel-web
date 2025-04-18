@@ -2,7 +2,11 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'helvetica', 'roboto' !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./assets/fonts/Montserrat-Regular.ttf);
 }
 
 :root {
@@ -12,17 +16,29 @@
     --ts-accent-color2: #000000;
 }
 
-.button{
+.button {
     background-color: var(--ts-primary-color);
     color: var(--ts-accent-color1);
     border-radius: 30px;
     padding: 7px 24px;
     border: none;
 }
-.button:hover{
+
+.button:hover {
     background-color: #f32f36;
 }
+
 .modal-backdrop {
     background-color: rgba(0, 0, 0, 0.9) !important;
     opacity: 1 !important;
-  }
+}
+
+.submit-button{
+    background-color: var(--ts-primary-color);
+    color: var(--ts-accent-color1);
+    border: none;
+    padding: 8px 40px;
+    border-radius: 4px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
