@@ -1,1 +1,21 @@
-<p>gallery works!</p>
+<div class="main-container py-5" *ngIf="galleryData">
+    <div class="container">
+        <div class="row">
+            <h2 class="text-center mb-4">OUR GALLERY</h2>
+            <h5 class="text-center"><strong>stilbro Metal Fabrication</strong></h5>
+            <div class="custom-grid">
+                <div class="column">
+                  <img class="img-fluid" src="{{galleryData[0]?.imageUrl}}" alt="Image 1">
+                </div>
+                <div class="column">
+                  <img class="img-fluid" src="{{galleryData[1]?.imageUrl}}" alt="Image 2">
+                  <img class="img-fluid" src="{{galleryData[2]?.imageUrl}}" alt="Image 3">
+                </div>
+                <div class="column">
+                  <img class="img-fluid" src="{{galleryData[3]?.imageUrl}}" alt="Image 4">
+                  <img class="img-fluid" src="{{galleryData[4]?.imageUrl}}" alt="Image 5">
+                </div>
+              </div>    
+        </div>
+    </div>
+</div>

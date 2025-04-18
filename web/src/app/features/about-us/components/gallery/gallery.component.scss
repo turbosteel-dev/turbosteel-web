@@ -1,0 +1,32 @@
+h2 {
+    font-weight: 900;
+    background-image: linear-gradient(to right, #1f579f, #f0312d 80%);
+    color: transparent;
+    background-clip: text;
+    font-size: 40px;
+}
+
+h5 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.custom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+// img {
+//     width: 100%;
+//     border-radius: 10px;
+//     display: block;
+// }

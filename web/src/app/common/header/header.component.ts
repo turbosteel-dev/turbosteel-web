@@ -57,7 +57,6 @@ export class HeaderComponent {
   onLoadRegistration() {
     this.http.get(this.registrationUrl).subscribe(response => {
       this.registrationData = response;
-      console.log(this.registrationData)
     });
   }
 

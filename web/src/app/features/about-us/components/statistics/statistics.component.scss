@@ -1,0 +1,23 @@
+.main-container {
+    background-image: url('/assets/images/about/aboutbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 6%;
+}
+
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    color: var(--ts-accent-color1);
+    padding: 70px 0;
+}
+
+h1,
+p {
+    font-weight: 600;
+}

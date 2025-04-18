@@ -1,1 +1,14 @@
-<p>statistics works!</p>
+<div class="main-container mb-3" *ngIf="aboutData">
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <div *ngFor="let item of aboutData">
+                    <div>
+                        <h1>{{item.title}}</h1>
+                        <p>{{item.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
