@@ -5,7 +5,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [],
@@ -15,14 +15,16 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   exports: [
     HttpClientModule,
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ]
 })
 export class SharedModule { }
