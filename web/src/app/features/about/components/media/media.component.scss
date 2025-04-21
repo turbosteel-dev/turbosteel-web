@@ -1,3 +1,7 @@
+.banner-container img {
+    width: 100%;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -6,7 +10,7 @@
     img {
         width: 300px;
         margin: 10px;
-        border-radius: 6px;
+        border-radius: 10px;
     }
 }
 
@@ -14,12 +18,14 @@
     display: flex;
     justify-content: center;
     margin-bottom: 18px;
+    overflow-x: auto;
 }
 
 span {
     margin: 10px;
     font-weight: 500;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .active-tab {
@@ -28,4 +34,15 @@ span {
     padding: 10px 20px;
     border-radius: 6px;
     font-weight: 600;
+}
+
+@media (max-width: 767px) {
+    .tabs-heading {
+        justify-content: flex-start;
+    }
+
+    .gallery img {
+        width: 100%;
+        margin: 10px 0;
+    }
 }

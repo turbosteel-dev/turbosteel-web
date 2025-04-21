@@ -29,6 +29,8 @@ select {
     padding: 10px;
     resize: none;
     outline: none;
+    font-weight: 600;
+    font-size: 15px;
 }
 
 input:hover,
@@ -92,5 +94,13 @@ small {
 
     .form-content>div {
         width: auto;
+    }
+
+    .form-uploads>div {
+        width: auto;
+    }
+
+    h2 {
+        font-size: 30px;
     }
 }

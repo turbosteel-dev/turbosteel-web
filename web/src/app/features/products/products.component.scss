@@ -1,18 +1,37 @@
-.banner-container{
-    min-height: 400px;
-    background-color: var(--ts-primary-color);
-    color: var(--ts-accent-color1);
+.banner-container img {
+    width: 100%;
 }
-.content{
+
+.content {
     display: flex;
     justify-content: center;
 }
-.product-img{
+
+.product-img {
     max-width: 400px;
+    margin-bottom: 15px;
 }
-.main-content{
+
+.main-content {
     border: 1px solid #74C7FF !important;
     background: #F4FBFF;
     border-radius: 20px;
     padding: 30px;
+    margin-left: 20px;
+}
+
+@media (max-width: 991px) {
+    .content {
+        display: block;
+    }
+
+    .product-img {
+        width: 100% ;
+        max-width: 100% !important;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px 12px;
+    }
 }

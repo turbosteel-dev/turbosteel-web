@@ -38,3 +38,14 @@ button:hover {
     background-color: var(--ts-accent-color1);
     color: var(--ts-primary-color);
 }
+
+@media (max-width: 767px) {
+
+    .line-container {
+        display: none;
+    }
+
+    .dealer-container {
+        padding-top: 40px;
+    }
+}

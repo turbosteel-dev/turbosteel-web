@@ -1,3 +1,7 @@
+.banner-container img {
+    width: 100%;
+}
+
 ul {
     display: flex;
     justify-content: center;
@@ -40,4 +44,16 @@ li {
 
 li.active-tab {
     border-bottom: 2px solid var(--ts-primary-color);
+}
+
+@media(max-width: 600px) {
+    .content>div {
+        flex: 100%;
+    }
+}
+
+@media(min-width: 601px) and (max-width: 991px) {
+    .content>div {
+        flex: 47%;
+    }
 }

@@ -1,6 +1,9 @@
 .carousel {
     overflow: hidden;
 }
+img{
+    width: 100%;
+}
 
 .banner-container ::ng-deep .slick-dots {
     bottom: 10px;

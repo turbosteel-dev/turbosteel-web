@@ -1,4 +1,4 @@
-<div class="main-container" *ngIf="technologyBannerData">
+<div class="banner-container" *ngIf="technologyBannerData">
     <img class="img-fluid" [src]="technologyBannerData[0]?.imageUrl" alt="mission">
 </div>
 
@@ -11,19 +11,19 @@
         </div>
         <div class="row my-4">
             <div class="col-xl-12 col-lg-12 col-sm-12 col-md-12">
-                <h4 class="text-center mb-0"><strong>{{technologyData[0]?.title}}</strong></h4>
+                <h4 class="text-center mb-3"><strong>{{technologyData[0]?.title}}</strong></h4>
                 <p [innerHtml]="safeTechnologyOne"></p>
             </div>
         </div>
-        <div class="row my-5 align-items-center">
+        <div class="row my-4 align-items-center">
             <div class="col-xl-4 col-lg-4 col-sm-12 col-md-4">
                 <img class="img-fluid image" [src]="technologyData[0]?.imageTwoUrl" alt="tempcore">
             </div>
             <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                <p [innerHtml]="safeTechnologyTwo"></p>
+                <p class="mt-2" [innerHtml]="safeTechnologyTwo"></p>
             </div>
         </div>
-        <div class="row my-5">
+        <div class="row my-4">
             <p [innerHtml]="safeTechnologyThree"></p>
         </div>
     </div>

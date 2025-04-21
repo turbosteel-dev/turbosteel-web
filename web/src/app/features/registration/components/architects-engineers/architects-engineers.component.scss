@@ -81,6 +81,9 @@ small {
 }
 
 @media (max-width: 767px) {
+    h2{
+        font-size: 30px;
+    }
     .form-uploads {
         display: block;
     }

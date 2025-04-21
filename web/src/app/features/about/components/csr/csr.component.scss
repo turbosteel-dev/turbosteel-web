@@ -1,7 +1,11 @@
+.banner-container img {
+    width: 100%;
+}
 .tab-heading {
     display: flex;
     justify-content: center;
     margin-bottom: 18px;
+    overflow-x: auto;
 }
 
 span {
@@ -9,6 +13,7 @@ span {
     font-weight: 600;
     cursor: pointer;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 .gallery {
@@ -61,4 +66,10 @@ span {
 .carousel-control-next,
 .carousel-control-prev {
     opacity: 1 !important;
+}
+
+@media (max-width: 767px){
+    .tab-heading {
+        justify-content: flex-start;
+    }
 }

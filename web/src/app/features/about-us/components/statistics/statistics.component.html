@@ -2,11 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="content">
-                <div *ngFor="let item of aboutData">
+                <div class="content-flex" *ngFor="let item of aboutData; let i=index;">
                     <div>
                         <h1>{{item.title}}</h1>
                         <p>{{item.description}}</p>
                     </div>
+                    <div class="line" *ngIf="i < aboutData.length - 1"></div>
                 </div>
             </div>
         </div>

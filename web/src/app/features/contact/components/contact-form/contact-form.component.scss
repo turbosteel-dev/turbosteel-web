@@ -79,11 +79,11 @@ small {
         display: block;
     }
 
-    .form-content .form-input {
+    .form-content>div {
         width: auto;
     }
 
-    textarea {
-        width: 85%;
-    }
+    // textarea {
+    //     width: 85%;
+    // }
 }

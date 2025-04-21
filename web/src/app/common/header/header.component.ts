@@ -19,6 +19,8 @@ export class HeaderComponent {
   registrationUrl = '/api/header/registrationHeader';
   registrationData: any;
   isDropdownOpen: boolean = true;
+  isSidenavOpen = false;
+  openedDropdown: string | null = null;
 
   constructor(private router: Router, private http: HttpService) { }
 
@@ -41,7 +43,7 @@ export class HeaderComponent {
       this.productData = response;
     });
   }
-  
+
   onLoadAbout() {
     this.http.get(this.aboutUrl).subscribe(response => {
       this.aboutData = response;
@@ -60,16 +62,20 @@ export class HeaderComponent {
     });
   }
 
-  openDropdown(): void {
-    this.isDropdownOpen = true;
+  openDropdown(name: string): void {
+    this.openedDropdown = name;
   }
 
   closeDropdown(): void {
-    this.isDropdownOpen = false;
+    this.openedDropdown = null;
   }
 
-  toggleDropdown(): void {
-    this.isDropdownOpen = !this.isDropdownOpen;
+  toggleDropdown(name: string): void {
+    this.openedDropdown = this.openedDropdown === name ? null : name;
+  }
+
+  openSidenav() {
+    this.isSidenavOpen = !this.isSidenavOpen;
   }
 
 }

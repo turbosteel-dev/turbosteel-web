@@ -5,7 +5,8 @@ h2 {
     color: transparent;
     background-clip: text;
 }
-p{
+
+p {
     font-size: 14px;
 }
 
@@ -41,4 +42,11 @@ p{
 li {
     list-style: none;
     font-size: 14px;
+}
+
+@media (max-width: 767px) {
+    .image-front {
+        top: -10%;
+        left: 10%;
+    }
 }

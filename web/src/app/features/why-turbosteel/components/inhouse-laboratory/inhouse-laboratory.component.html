@@ -1,4 +1,4 @@
-<div class="main-container" *ngIf="inhouseBannerData">
+<div class="banner-container" *ngIf="inhouseBannerData">
     <img class="img-fluid" [src]="inhouseBannerData[0]?.imageUrl" alt="mission">
 </div>
 
@@ -15,7 +15,9 @@
         </div>
         <div class="row">
             <p class="my-4">{{inhouseData[0]?.sub_title}}</p>
-            <p class="safehtml" [innerHtml]="safeProductinhouse"></p>
+            <div class="safehtml">
+                <p  [innerHtml]="safeProductinhouse"></p>
+            </div>
         </div>
     </div>
 </div>
