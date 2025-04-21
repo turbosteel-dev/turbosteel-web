@@ -74,7 +74,19 @@ p {
 }
 
 @media (max-width: 767px) {
-    .carousel {
-        width: 100%;
+    .carousel-container {
+        width: 80%;
+    }
+    .custom-prev {
+        left: -15%;
+    }
+    
+    .custom-next {
+        right: -15%;
+    }
+    .custom-prev img,
+    .custom-next img {
+        width: 24px;
+        height: 24px;
     }
 }

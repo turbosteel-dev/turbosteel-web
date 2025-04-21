@@ -4,7 +4,7 @@
     </div>
     <div class="carousel-container">
         <ngx-slick-carousel #slickModal class="carousel text-center" [config]="slideConfig">
-            <div class="mb-4" ngxSlickItem *ngFor="let item of testimonialData">
+            <div class="mb-4" ngxSlickItem aria-hidden="true" *ngFor="let item of testimonialData">
                 <div class="d-flex justify-content-center">
                     <img class="img-fluid" [src]="item.imageUrl" alt="client-img">
                 </div>

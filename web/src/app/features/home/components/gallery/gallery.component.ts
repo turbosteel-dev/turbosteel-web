@@ -24,6 +24,20 @@ export class GalleryComponent {
     infinite: true,
     autoplay: true,
     auto: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 540,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 990,
+        settings: {
+          slidesToShow: 3,
+        }
+      }
+    ]
   };
 }

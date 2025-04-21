@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/service/http.service';
+import { ResponsiveService } from 'src/app/service/responsive.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -20,11 +22,24 @@ export class HeaderComponent {
   registrationData: any;
   isDropdownOpen: boolean = true;
   isSidenavOpen = false;
+  responsiveSub!: Subscription;
+  isMobile: boolean = false;
   openedDropdown: string | null = null;
 
-  constructor(private router: Router, private http: HttpService) { }
+  constructor(private router: Router, private http: HttpService, public responsiveService: ResponsiveService) {
+    // this.router.events.subscribe(() => {
+    //   this.openedDropdown = null;
+    // });
+  }
 
   ngOnInit() {
+    this.responsiveSub = this.responsiveService.isResponsiveOpen.subscribe((val: any) => {
+      this.isSidenavOpen = val;
+    });
+    this.isMobile = window.innerWidth <= 991; // mobile breakpoint
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth <= 991;
+    });
     this.onLoadFacilities();
     this.onLoadProducts();
     this.onLoadAbout();
@@ -71,11 +86,16 @@ export class HeaderComponent {
   }
 
   toggleDropdown(name: string): void {
+    if (!this.isMobile) return;
+    if (event) event.stopPropagation();
     this.openedDropdown = this.openedDropdown === name ? null : name;
   }
 
   openSidenav() {
-    this.isSidenavOpen = !this.isSidenavOpen;
+    this.responsiveService.openResponsive();
   }
 
+  closeSidenav() {
+    this.responsiveService.closeResponsive();
+  }
 }

@@ -7,7 +7,7 @@
                 <p><span><strong>{{item.date | date:'dd MMM yyyy'}}</strong></span></p>
                 <h6><strong>{{item.title | uppercase}}</strong></h6>
                 <p>{{item.description}}</p>
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center flex-wrap">
                     <a href="{{data.url}}" *ngFor="let data of item.lists; let i=index;">
                         <button [ngClass]="'btn-' + i">{{data.list_title}}</button>
                     </a>

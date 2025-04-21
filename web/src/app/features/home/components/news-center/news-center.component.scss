@@ -31,10 +31,10 @@ p {
 
 button {
     font-size: 13px;
-    padding: 2px 10px;
+    padding: 2px 8px;
     border-radius: 16px;
     border: none;
-    margin: 5px;
+    margin: 3px;
 }
 
 .btn-0 {
@@ -56,4 +56,10 @@ button {
     padding: 8px 30px;
     font-size: 16px;
     border-radius: 30px;
+}
+
+@media (max-width: 767px){
+    img{
+        height: auto;
+    }
 }

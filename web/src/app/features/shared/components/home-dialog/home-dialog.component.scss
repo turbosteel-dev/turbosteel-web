@@ -1,0 +1,23 @@
+.popup {
+    position: fixed;
+    top: 25%;
+    border-radius: 10px;
+    right: 52px;
+    background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 10px;
+    z-index: 9999;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup .close {
+    color: #aaa;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+// p:last-child:after {
+//     clear: both;
+//     content: "";
+//     display: block;
+// }

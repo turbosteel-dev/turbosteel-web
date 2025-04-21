@@ -5,23 +5,28 @@
             <img src="assets/icons/hamberger-menu.svg" alt="hamburger" />
         </a>
     </div>
-    <div class="main-nav">
+    <div class="main-nav" [class.open]="isSidenavOpen">
         <div class="first-nav">
             <a routerLink="/home"><img class="img-fluid web-logo" src="assets/images/logo.jpg" alt="logo"></a>
+            <div class="close-btn d-md-none" (click)="closeSidenav()">
+                <img src="assets/icons/cross.svg" alt="Close" />
+            </div>
         </div>
+
         <div class="sidenav">
             <ul>
-                <li class="navbar" (mouseleave)="closeDropdown()" (mouseenter)="openDropdown('about')">
-                    <a routerLinkActive="active"
-                        class="dropdown-trigger d-flex align-items-center px-2" (click)="toggleDropdown('about')">
+                <li class="navbar" (mouseenter)="!isMobile && openDropdown('about')"
+                    (mouseleave)="!isMobile && closeDropdown()" 
+                    (click)="isMobile ? toggleDropdown('about') : null">
+                    <a routerLinkActive="active" class="dropdown-trigger d-flex align-items-center px-2">
                         About Us
-                        <!-- <img class="chevron-img ms-2" src="assets/images/icons/chevron.svg" alt=""> -->
+                        <img class="chevron-img ms-2" src="assets/icons/chevron.svg" alt="">
                     </a>
                     <div class="dropdown" *ngIf="openedDropdown === 'about'">
                         <div class="dropdown-container">
                             <div *ngFor="let data of aboutData" class="dropdown-item">
                                 <a routerLinkActive="active" [routerLink]="['/about', data?.url || '']"
-                                    (click)="closeDropdown()">
+                                    (click)="closeDropdown(); closeSidenav()">
                                     <p class="mb-1"> <strong>{{ data?.title || 'Unnamed' }}</strong></p>
                                     <p class="mb-0"> {{ data?.description }}</p>
                                 </a>
@@ -30,17 +35,18 @@
                     </div>
 
                 </li>
-                <li class="navbar" (mouseleave)="closeDropdown()" (mouseenter)="openDropdown('why-turbosteel')">
-                    <a routerLinkActive="active" class="dropdown-trigger d-flex align-items-center px-2"
-                        (click)="toggleDropdown('why-turbosteel')">
+                <li class="navbar" (mouseenter)="!isMobile && openDropdown('why-turbosteel')"
+                (mouseleave)="!isMobile && closeDropdown()" 
+                (click)="isMobile ? toggleDropdown('why-turbosteel') : null">
+                    <a routerLinkActive="active" class="dropdown-trigger d-flex align-items-center px-2">
                         Why Turbosteel
-                        <!-- <img class="chevron-img ms-2" src="assets/images/icons/chevron.svg" alt=""> -->
+                        <img class="chevron-img ms-2" src="assets/icons/chevron.svg" alt="">
                     </a>
                     <div class="dropdown" *ngIf="openedDropdown === 'why-turbosteel'">
                         <div class="dropdown-container">
                             <div *ngFor="let data of turbosteelData" class="dropdown-item">
                                 <a routerLinkActive="active" [routerLink]="['/why-turbosteel', data?.url || '']"
-                                    (click)="closeDropdown()">
+                                    (click)="closeDropdown(); closeSidenav()">
                                     <p class="mb-1"> <strong>{{ data?.title || 'Unnamed' }}</strong></p>
                                     <p class="mb-0"> {{ data?.description }}</p>
                                 </a>
@@ -49,17 +55,18 @@
                     </div>
 
                 </li>
-                <li class="navbar" (mouseleave)="closeDropdown()" (mouseenter)="openDropdown('products')">
-                    <a routerLinkActive="active"
-                        class="dropdown-trigger d-flex align-items-center px-2" (click)="toggleDropdown('products')"> Our
+                <li class="navbar" (mouseenter)="!isMobile && openDropdown('products')"
+                (mouseleave)="!isMobile && closeDropdown()">
+                    <a routerLinkActive="active" class="dropdown-trigger d-flex align-items-center px-2"
+                    (click)="isMobile ? toggleDropdown('products') : null"> Our
                         Products
-                        <!-- <img class="chevron-img ms-2" src="assets/images/icons/chevron.svg" alt=""> -->
+                        <img class="chevron-img ms-2" src="assets/icons/chevron.svg" alt="">
                     </a>
                     <div class="dropdown" *ngIf="openedDropdown === 'products'">
                         <div class="dropdown-container">
                             <div *ngFor="let data of productData" class="dropdown-item">
                                 <a routerLinkActive="active" [routerLink]="['/products', data?.productUrlId || '']"
-                                    (click)="closeDropdown()">
+                                    (click)="closeDropdown(); closeSidenav()">
                                     <p class="mb-1"> <strong>{{ data?.title || 'Unnamed' }}</strong></p>
                                     <p class="mb-0"> {{ data?.headerDescription }}</p>
                                 </a>
@@ -68,15 +75,17 @@
                     </div>
 
                 </li>
-                <li class="navbar" (mouseleave)="closeDropdown()" (mouseenter)="openDropdown('facilities')">
-                    <a routerLinkActive="active"
-                        class="dropdown-trigger d-flex align-items-center px-2" (click)="toggleDropdown('facilities')"> Facilities
+                <li class="navbar"(mouseenter)="!isMobile && openDropdown('facilities')"
+                (mouseleave)="!isMobile && closeDropdown()">
+                    <a routerLinkActive="active" class="dropdown-trigger d-flex align-items-center px-2"
+                    (click)="isMobile ? toggleDropdown('facilities') : null"> Facilities
+                    <img class="chevron-img ms-2" src="assets/icons/chevron.svg" alt="">
                     </a>
                     <div class="dropdown" *ngIf="openedDropdown === 'facilities'">
                         <div class="dropdown-container">
                             <div class="dropdown-item" *ngFor="let data of facilityCategoryData">
                                 <a routerLinkActive="active" [routerLink]="['/facilities', data?.url || '']"
-                                    (click)="closeDropdown()">
+                                    (click)="closeDropdown(); closeSidenav()">
                                     <p class="mb-1"> <strong>{{ data?.title || 'Unnamed' }}</strong></p>
                                     <p class="mb-0"> {{ data?.headerDescription }}</p>
                                 </a>
@@ -84,16 +93,17 @@
                         </div>
                     </div>
                 </li>
-                <li class="navbar" (mouseleave)="closeDropdown()" (mouseenter)="openDropdown('buy')">
+                <li class="navbar" (mouseenter)="!isMobile && openDropdown('buy')"
+                (mouseleave)="!isMobile && closeDropdown()">
                     <a routerLinkActive="active" routerLink="/buy"
-                        class="dropdown-trigger d-flex align-items-center px-2" (click)="toggleDropdown('buy')">
+                        class="dropdown-trigger d-flex align-items-center px-2"  (click)="isMobile ? toggleDropdown('buy') : null;  closeSidenav()">
                         Buy
-                        <!-- <img class="chevron-img ms-2" src="assets/images/icons/chevron.svg" alt=""> -->
+                        <img class="chevron-img ms-2" src="assets/icons/chevron.svg" alt="">
                     </a>
                     <div class="dropdown" *ngIf="openedDropdown === 'buy'">
                         <div class="dropdown-container">
                             <div class="dropdown-item">
-                                <a routerLinkActive="active" routerLink="/buy" (click)="closeDropdown()">
+                                <a routerLinkActive="active" routerLink="/buy" (click)="closeDropdown();closeSidenav()">
                                     <p class="mb-1"> <strong>Buy TMT</strong></p>
                                     <p class="mb-0"> Premium TMT bars, strong, reliable</p>
                                 </a>
@@ -102,17 +112,18 @@
                     </div>
 
                 </li>
-                <li class="navbar" (mouseleave)="closeDropdown()" (mouseenter)="openDropdown('registration')">
-                    <a routerLinkActive="active"
-                        class="dropdown-trigger d-flex align-items-center px-2" (click)="toggleDropdown('registration')">
+                <li class="navbar" (mouseenter)="!isMobile && openDropdown('registration')"
+                (mouseleave)="!isMobile && closeDropdown()">
+                    <a routerLinkActive="active" class="dropdown-trigger d-flex align-items-center px-2"
+                    (click)="isMobile ? toggleDropdown('registration') : null">
                         Registration
-                        <!-- <img class="chevron-img ms-2" src="assets/images/icons/chevron.svg" alt=""> -->
+                        <img class="chevron-img ms-2" src="assets/icons/chevron.svg" alt="">
                     </a>
                     <div class="dropdown" *ngIf="openedDropdown === 'registration'">
                         <div class="dropdown-container">
-                            <div *ngFor="let data of registrationData" class="dropdown-item">
+                            <div class="dropdown-item" *ngFor="let data of registrationData">
                                 <a routerLinkActive="active" [routerLink]="['/registration', data?.url || '']"
-                                    (click)="closeDropdown()">
+                                    (click)="closeDropdown(); closeSidenav()" >
                                     <p class="mb-1"> <strong>{{ data?.title || 'Unnamed' }}</strong></p>
                                     <p class="mb-0"> {{ data?.description }}</p>
                                 </a>
