@@ -5,8 +5,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 import { HomeDialogComponent } from './components/home-dialog/home-dialog.component';
-
 
 @NgModule({
   declarations: [
@@ -18,7 +18,8 @@ import { HomeDialogComponent } from './components/home-dialog/home-dialog.compon
     SlickCarouselModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   exports: [
     HttpClientModule,
@@ -26,6 +27,7 @@ import { HomeDialogComponent } from './components/home-dialog/home-dialog.compon
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatIconModule,
     HomeDialogComponent
   ]
 })

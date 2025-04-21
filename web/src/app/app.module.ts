@@ -8,13 +8,15 @@ import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderComponent } from './common/loader/loader.component';
+import { ContactToggleComponent } from './common/contact-toggle/contact-toggle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    ContactToggleComponent,
   ],
   imports: [
     BrowserModule,
