@@ -69,13 +69,19 @@ p i {
     left: 12px;
 }
 
-.icons{
+.icons {
     position: relative;
     width: 30px;
 }
 
 
-.phoneIcon{
+.phoneIcon {
     position: relative;
     width: 20px !important;
+}
+
+@media (max-width: 600px) {
+    #sidebar {
+        display: none !important;
+    }
 }

@@ -12,9 +12,17 @@
             </div>
             <div class="col-xl-4 col-lg-4 col-sm-12 col-md-4" *ngIf="addressData">
                 <h5>CONTACT US</h5>
-                <div class="d-flex align-items-start" *ngFor="let item of addressData">
-                    <img class="img-fluid me-2" src="{{item.imageUrl}}" alt="location">
-                    <p>{{item.title}}</p>
+                <div class="d-flex align-items-start">
+                    <img class="img-fluid me-2" src="{{addressData[0].imageUrl}}" alt="location">
+                    <p>{{addressData[0].title}}</p>
+                </div>
+                <div class="d-flex align-items-start">
+                    <img class="img-fluid me-2" src="{{addressData[1].imageUrl}}" alt="location">
+                    <a href="tel: {{addressData[1].title}}"><p>{{addressData[1].title}}</p></a>
+                </div>
+                <div class="d-flex align-items-start">
+                    <img class="img-fluid me-2" src="{{addressData[2].imageUrl}}" alt="location">
+                    <a href="mailto: {{addressData[2].title}}"><p>{{addressData[2].title}}</p></a>
                 </div>
             </div>
         </div>

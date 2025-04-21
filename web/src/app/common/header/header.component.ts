@@ -63,7 +63,9 @@ export class HeaderComponent {
       this.registrationData = response;
     });
   }
- 
+  goToNewsCenter(){
+    this.router.navigate(['/home'], {fragment: 'news-center'})
+  }
   openDropdown(name: string): void {
     this.openedDropdown = name;
   }
