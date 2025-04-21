@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HttpService } from 'src/app/service/http.service';
 declare var bootstrap: any;
 
@@ -19,6 +19,16 @@ export class CsrComponent {
   csrUrl = '/api/csr/csrDetail'
   csrData: any;
 
+  @ViewChild('galleryContainer', { static: false }) galleryContainer!: ElementRef;
+  miningGalleryUrl = '/api/csr/csrDetail';
+  galleryData: any;
+  filterGallery: any;
+  dataId: any;
+
+  isLightboxOpen = false;
+  currentImage = '';
+  currentIndex = 0;
+
   constructor(private http: HttpService) { }
 
   ngOnInit() {
@@ -37,86 +47,10 @@ export class CsrComponent {
     this.http.get(this.csrUrl).subscribe(response => {
       this.csrData = response;
       console.log(this.csrData);
-      this.selectFirstTab();
       this.onClickTab('all')
     });
   }
 
-  selectFirstTab() {
-    if (this.csrCategoryData && this.csrCategoryData.length > 0) {
-      this.selectedId = this.csrCategoryData[0].url;
-      this.onClickTab(this.selectedId)
-    }
-  }
-
-  csrCategory = [
-    {
-      id: '1',
-      title: "COVID RELIEF WORKS",
-      children: [
-        {
-          img: "assets/images/csr/1.jpg",
-          text: "Community Health Center"
-        },
-        {
-          img: "assets/images/csr/2.jpg",
-          text: "COVID-19 Relief works"
-        },
-        {
-          img: "assets/images/csr/3.jpg",
-          text: "Donating Medical Equipments"
-        },
-        {
-          img: "assets/images/csr/4.jpg",
-          text: "Donating Medical Equipments"
-        },
-        {
-          img: "assets/images/csr/5.jpg",
-          text: "Donating Medical Equipments"
-        }
-      ]
-    },
-    {
-      id: '2',
-      title: "HEALTHCARE",
-      children: [
-        {
-          img: "assets/images/csr/6.jpg",
-          text: "Ambulance Donated"
-        },
-        {
-          img: "assets/images/csr/7.jpg",
-          text: "Mobile Health Clinic"
-        },
-        {
-          img: "assets/images/csr/8.jpg",
-          text: "Specialized Health Camps"
-        }
-      ]
-    },
-    {
-      id: '3',
-      title: "EDUACTION",
-      children: [
-        {
-          img: "assets/images/csr/9.jpg",
-          text: "Providing Elementary Infrastructure"
-        },
-        {
-          img: "assets/images/csr/10.jpg",
-          text: "Midday Meals Dining Halls"
-        },
-        {
-          img: "assets/images/csr/11.jpg",
-          text: "Infrastructure Support"
-        },
-        {
-          img: "assets/images/csr/12.jpg",
-          text: "Constructed Classrooms"
-        }
-      ]
-    }
-  ]
 
   onClickTab(url: any) {
     this.selectedId = url;
@@ -129,23 +63,32 @@ export class CsrComponent {
     console.log(this.csrGallery);
   }
   
-  openLightbox(index: number, event: Event) {
-    event.preventDefault();
-    this.activeSlideIndex = index;
+  openLightbox(index: number) {
+    this.isLightboxOpen = true;
+    this.currentIndex = index;
+    this.currentImage = this.csrGallery[index].imageUrl;
+      document.body.style.overflowY = 'hidden';
+  }
 
-    setTimeout(() => {
-      const carousel = document.querySelector('#carouselLightbox');
-      if (carousel) {
-        const bsCarousel = new bootstrap.Carousel(carousel);
-        bsCarousel.to(index);
-      }
+  closeLightbox() {
+    this.isLightboxOpen = false;
+    document.body.style.overflowY = 'auto'
+  }
 
-      const modal = document.getElementById('lightboxModal');
-      if (modal) {
-        const bsModal = new bootstrap.Modal(modal);
-        bsModal.show();
-      }
-    }, 0);
+  prevImage(event: Event) {
+    event.stopPropagation();
+    this.currentIndex =
+      (this.currentIndex - 1 + this.csrGallery.length) %
+      this.csrGallery.length;
+    this.currentImage = 
+      this.csrGallery[this.currentIndex].imageUrl;
+  }
+
+  nextImage(event: Event) {
+    event.stopPropagation();
+    this.currentIndex = (this.currentIndex + 1) % this.csrGallery.length;
+    this.currentImage =
+      this.csrGallery[this.currentIndex].imageUrl;
   }
 
 }

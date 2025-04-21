@@ -1,8 +1,9 @@
 <div class="banner-container" *ngIf="csrBannerData">
     <img class="img-fluid" [src]="csrBannerData[0]?.imageUrl" alt="csr-img">
 </div>
-<div class="csr-container py-5" *ngIf="csrCategoryData">
-    <div class="container">
+
+<div class="main-container py-5">
+    <div class="container" *ngIf="csrGallery" #galleryContainer>
         <div class="row">
             <div class="tab-heading">
                 <p>
@@ -15,49 +16,25 @@
                         (click)="onClickTab(item.url)">{{item.title | uppercase}}</span>
                 </p>
             </div>
-            <hr>
-            <div class="gallery" *ngIf="csrGallery">
-                <div class="row">
-                    <div class=" col-xl-4 col-lg-4 main-img-container" *ngFor="let data of csrGallery; let i = index">
-                        <a href="#" (click)="openLightbox(i, $event)">
-                            <img class="img-fluid main-img" [src]="data.imageUrl" alt="gallery-img">
-                            <p class="text-center overlay-text"><strong>{{data.title}}</strong></p>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="modal fade lightbox-modal mt-4" id="lightboxModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl">
-                        <div class="modal-content">
-                            <button type="button" class="btn-close btn-close-white position-absolute"
-                                data-bs-dismiss="modal" aria-label="Close"
-                                style="top: 10px; right: 10px; z-index: 1051;"></button>
-                            <div class="modal-body p-0">
-                                <div id="carouselLightbox" class="carousel slide " data-bs-interval="false">
-                                    <div class="carousel-inner">
-                                        <div *ngFor="let img of csrGallery; let i = index" class="carousel-item"
-                                            [ngClass]="{ active: i === activeSlideIndex }">
-                                            <img [src]="img.imageUrl" class="d-block pop-img" alt="gallery-img" />
-                                        </div>
-                                    </div>
-
-
-                                    <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#carouselLightbox" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                        data-bs-target="#carouselLightbox" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4 my-2 content gallery"
+                *ngFor="let img of csrGallery; let i = index">
+                <div class="image-wrapper">
+                    <img class="img-fluid gallery-thumbnail" [src]="img?.imageUrl" alt="Image {{ i + 1 }}"
+                        (click)="openLightbox(i)" />
+                    <p class="overlay-text"><strong>{{img.title}}</strong></p>
                 </div>
             </div>
+
+
+        </div>
+    </div>
+
+    <div class="lightbox" *ngIf="isLightboxOpen" (click)="closeLightbox()">
+        <div class="lightbox-content" (click)="$event.stopPropagation()">
+            <img [src]="currentImage" class="lightbox-image" alt="Selected Image" />
+            <button class="prev" (click)="prevImage($event)">&#10094;</button>
+            <button class="next" (click)="nextImage($event)">&#10095;</button>
+            <button class="close" (click)="closeLightbox()">&times;</button>
         </div>
     </div>
 </div>
