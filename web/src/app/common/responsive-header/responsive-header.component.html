@@ -22,7 +22,7 @@
                     <ul *ngIf="isAboutUsOpen" class="dropdown">
                         <li *ngFor="let data of aboutData">
                             <a [routerLink]="['/about', data?.url || '']" (click)="sidenavService.closeResponsive()">{{
-                                data?.name || 'Unnamed' }}</a>
+                                data?.title || 'Unnamed' }}</a>
                             <p class="mb-0"> {{ data?.description }}</p>
                         </li>
                     </ul>
@@ -116,7 +116,7 @@
                 </li>
 
                 <li class="menu-item">
-                    <a (click)="sidenavService.closeResponsive()" routerLink="/">News Center</a>
+                    <a (click)="sidenavService.closeResponsive(); goToNewsCenter()" routerLink="/">News Center</a>
                 </li>
                 <li class="menu-item">
                     <a (click)="sidenavService.closeResponsive()" routerLink="./contact">Contact Us</a>

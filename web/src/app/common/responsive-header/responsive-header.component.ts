@@ -74,7 +74,9 @@ export class ResponsiveHeaderComponent {
     this.isRegistrationUsOpen = !this.isRegistrationUsOpen;
   }
 
-
+  goToNewsCenter(){
+    this.router.navigate(['/home'], {fragment: 'news-center'})
+  }
 
   toggleCsrDropdown() {
     this.isCsrOpen = !this.isCsrOpen;

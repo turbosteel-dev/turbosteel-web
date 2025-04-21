@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
-  baseUrl = 'http://localhost:3000'
+  baseUrl = 'https://turbo-steel-api-nkapt.ondigitalocean.app'
 
   constructor(private http: HttpClient) { }
 
