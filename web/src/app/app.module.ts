@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomePopupComponent } from './common/home-popup/home-popup.component';
+import { LoaderComponent } from './common/loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    HomePopupComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

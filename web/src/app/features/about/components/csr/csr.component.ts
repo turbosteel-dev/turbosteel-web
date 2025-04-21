@@ -23,6 +23,7 @@ export class CsrComponent {
 
   ngOnInit() {
     this.onLoadcsr();
+ 
   }
 
   onLoadcsr() {
@@ -37,6 +38,7 @@ export class CsrComponent {
       this.csrData = response;
       console.log(this.csrData);
       this.selectFirstTab();
+      this.onClickTab('all')
     });
   }
 
@@ -116,12 +118,15 @@ export class CsrComponent {
     }
   ]
 
-
   onClickTab(url: any) {
     this.selectedId = url;
-    console.log(this.selectedId)
-    this.csrGallery = this.csrData.filter((p: any) => p.csrCategoryUrlId === url)
-    console.log(this.csrGallery)
+    console.log(this.selectedId);
+    if (url === 'all') {
+      this.csrGallery = this.csrData;
+    } else {
+      this.csrGallery = this.csrData.filter((p: any) => p.csrCategoryUrlId === url);
+    }
+    console.log(this.csrGallery);
   }
   
   openLightbox(index: number, event: Event) {

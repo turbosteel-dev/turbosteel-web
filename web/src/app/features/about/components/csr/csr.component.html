@@ -5,21 +5,27 @@
     <div class="container">
         <div class="row">
             <div class="tab-heading">
+                <p>
+                    <span [ngClass]="{'active-tab': selectedId === 'all'}" (click)="onClickTab('all')">
+                        ALL
+                    </span>
+                </p>
                 <p *ngFor="let item of csrCategoryData">
-                    <span [ngClass]="{'active-tab' : selectedId === item.url}" (click)="onClickTab(item.url)">{{item.title | uppercase}}</span>
+                    <span [ngClass]="{'active-tab' : selectedId === item.url}"
+                        (click)="onClickTab(item.url)">{{item.title | uppercase}}</span>
                 </p>
             </div>
             <hr>
             <div class="gallery" *ngIf="csrGallery">
                 <div class="row">
                     <div class=" col-xl-4 col-lg-4 main-img-container" *ngFor="let data of csrGallery; let i = index">
-                        <a  href="#" (click)="openLightbox(i, $event)">
+                        <a href="#" (click)="openLightbox(i, $event)">
                             <img class="img-fluid main-img" [src]="data.imageUrl" alt="gallery-img">
                             <p class="text-center overlay-text"><strong>{{data.title}}</strong></p>
                         </a>
                     </div>
                 </div>
-             
+
                 <div class="modal fade lightbox-modal mt-4" id="lightboxModal" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered justify-content-center modal-xl">
                         <div class="modal-content">
@@ -34,15 +40,15 @@
                                             <img [src]="img.imageUrl" class="d-block pop-img" alt="gallery-img" />
                                         </div>
                                     </div>
-    
-                                   
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselLightbox"
-                                        data-bs-slide="prev">
+
+
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselLightbox" data-bs-slide="prev">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Previous</span>
                                     </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselLightbox"
-                                        data-bs-slide="next">
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselLightbox" data-bs-slide="next">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="visually-hidden">Next</span>
                                     </button>

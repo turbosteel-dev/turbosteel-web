@@ -116,7 +116,6 @@ export class ArchitectsEngineersComponent {
 
       this.http.post(this.architectEngineersUrl, formData).subscribe(response => {
         this.architectEngineerData = response;
-        // console.log(this.architectEngineerData);
         this.architectEngineersForm.reset();
         this.selectedFiles = {
           photograph: null,
