@@ -36,9 +36,9 @@ export class HeaderComponent {
     this.responsiveSub = this.responsiveService.isResponsiveOpen.subscribe((val: any) => {
       this.isSidenavOpen = val;
     });
-    this.isMobile = window.innerWidth <= 991; // mobile breakpoint
+    this.isMobile = window.innerWidth <= 1199; // mobile breakpoint
     window.addEventListener('resize', () => {
-      this.isMobile = window.innerWidth <= 991;
+      this.isMobile = window.innerWidth <= 1199;
     });
     this.onLoadFacilities();
     this.onLoadProducts();

@@ -1,39 +1,19 @@
-<!-- <div id="popUpMain">
-    <div id="popupprice" class="popup">
-    <span class="close" (click)="closePopup()">&times;</span>
-    <div class="card" *ngIf="popupData">
-        <div class="testimonials-slider owl-carousel text-center text-md-left" id="faq-carousel" data-autoplay="true" data-loop="true" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-nav="true" data-dots="false">
-        </div>
-        <p *ngFor="let item of popupData">{{ item.title }}</p>
+<div id="popupprice" class="popup" style="display: block;" *ngIf="showPopup"> <!-- Initially hidden -->
+    <div class="inpopup">
+        <div></div>
+        <span (click)="closePopup()" class="close">×</span>
     </div>
-</div> -->
-<!-- <div id="popUpMain" *ngIf="showPopup">
-    <div id="popupprice" class="popup">
-        <span class="close" (click)="closePopup()">&times;</span>
-        <div class="card" *ngIf="popupData">
-            <p *ngFor="let item of popupData">{{ item.title }}</p>
-        </div>
-    </div>
-</div> -->
+    <div class="popup-card" *ngIf="popupData.length > 0">
 
-<div id="popupprice" class="popup" style="display: block;"  *ngIf="showPopup"> <!-- Initially hidden -->
-    <span (click)="closePopup()" class="close">×</span>
-    <div class="card"  *ngIf="popupData.length > 0">
-       
-            <div class="faq-item">
-                <div class="question">{{ popupData[currentIndex]?.title }}</div>
-                <div class="answer">
-                    <p><strong>{{ popupData[currentIndex]?.price }}</strong></p>
-                  </div>
-                  <a href="tmt.php" class="bt">Checkout Now <i class="fas fa-arrow-right-long"></i></a>a>
+        <div class="faq-item">
+            <div class="question">
+                <h5><strong>{{ popupData[currentIndex]?.title | uppercase }}</strong></h5>
             </div>
-            <!-- <button (click)="prevItem()">Previous</button>
-            <button (click)="nextItem()">Next</button> -->
-            <!-- <div class="faq-item">
-                <div class="question">SHREERAMA</div>
-                <div class="answer">
-                    <p><strong>Rs. 4000<span class="ql-cursor">﻿</span></strong></p>
-                </div><a href="tmt.php" class="bt">Checkout Now <i class="fas fa-arrow-right-long"></i></a>
-            </div> -->
+            <div class="answer">
+                <p [innerHtml]="safePrice[currentIndex]"></p>
+            </div>
+            <a href="{{popupData[currentIndex]?.url}}" class="bt">Checkout Now &rarr;<i
+                    class="fas fa-arrow-right-long"></i></a>
+        </div>
     </div>
 </div>
