@@ -13,7 +13,7 @@
                 <!-- About Us Dropdown -->
                 <li class="menu-item">
                     <div class="flexes">
-                        <a routerLink="./aboutus" (click)="sidenavService.closeResponsive()">
+                        <a (click)="sidenavService.closeResponsive()">
                             About Us
                         </a>
                         <img (click)="toggleAboutUsDropdown()" [class.rotate]="isAboutUsOpen" class="chevron-img ms-4"
