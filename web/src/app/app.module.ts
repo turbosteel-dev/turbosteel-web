@@ -9,6 +9,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderComponent } from './common/loader/loader.component';
 import { ContactToggleComponent } from './common/contact-toggle/contact-toggle.component';
+import { ResponsiveHeaderComponent } from './common/responsive-header/responsive-header.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ContactToggleComponent } from './common/contact-toggle/contact-toggle.c
     FooterComponent,
     LoaderComponent,
     ContactToggleComponent,
+    ResponsiveHeaderComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,127 @@
+<section>
+    <div class="navheader">
+        <a (click)="sidenavService.closeResponsive()">
+            <img src="assets/images/logo.jpg" class="logo" alt="logo">
+        </a>
+        <a (click)="sidenavService.closeResponsive()">
+            <img src="assets/icons/cross.svg" class="cross">
+        </a>
+    </div>
+    <header>
+        <nav>
+            <ul>
+                <!-- About Us Dropdown -->
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a routerLink="./aboutus" (click)="sidenavService.closeResponsive()">
+                            About Us
+                        </a>
+                        <img (click)="toggleAboutUsDropdown()" [class.rotate]="isAboutUsOpen" class="chevron-img ms-4"
+                            src="assets/icons/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="isAboutUsOpen" class="dropdown">
+                        <li *ngFor="let data of aboutData">
+                            <a [routerLink]="['/about', data?.url || '']" (click)="sidenavService.closeResponsive()">{{
+                                data?.name || 'Unnamed' }}</a>
+                            <p class="mb-0"> {{ data?.description }}</p>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Mining Dropdown -->
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a (click)="sidenavService.closeResponsive()">
+                            Why Turbosteel
+                        </a>
+                        <img (click)="toggleWhyTurboDropdown()" [class.rotate]="iswhyTurboSteelOpen"
+                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="iswhyTurboSteelOpen" class="dropdown">
+                        <li *ngFor="let data of turbosteelData">
+                            <a [routerLink]="['/why-turbosteel', data?.url || '']"
+                                (click)="sidenavService.closeResponsive()">{{
+                                data?.title || 'Unnamed' }}</a>
+                            <p class="mb-0"> {{ data?.description }}</p>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a (click)="sidenavService.closeResponsive()">Our Products</a>
+                        <img (click)="toggleProductsDropdown()" [class.rotate]="isProductUsOpen"
+                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="isProductUsOpen" class="dropdown">
+                        <li *ngFor="let data of productData">
+                            <a [routerLink]="['/companies', data?.url || '']"
+                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}</a>
+                            <p class="mb-0"> {{ data?.headerDescription }}</p>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a (click)="sidenavService.closeResponsive()">Facilities</a>
+                        <img (click)="toggleFacilitiesDropdown()" [class.rotate]="isFacilitiesUsOpen"
+                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="isFacilitiesUsOpen" class="dropdown">
+                        <li *ngFor="let data of facilityCategoryData">
+                            <a [routerLink]="['/companies', data?.url || '']"
+                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}</a>
+                            <p class="mb-0"> {{ data?.headerDescription }}</p>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a (click)="sidenavService.closeResponsive()">Buy</a>
+                        <img (click)="toggleBuyDropdown()" [class.rotate]="isBuyUsOpen"
+                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="isBuyUsOpen" class="dropdown">
+                        <li>
+                            <a routerLink="/buy" (click)="sidenavService.closeResponsive()">
+                                <p class="mb-1"> <strong>Buy TMT</strong></p>
+                                <p class="mb-0"> Premium TMT bars, strong, reliable</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="menu-item">
+                    <div class="flexes">
+                        <a (click)="sidenavService.closeResponsive()">Registration</a>
+                        <img (click)="toggleRegistrationDropdown()" [class.rotate]="isRegistrationUsOpen"
+                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    </div>
+                    <ul *ngIf="isRegistrationUsOpen" class="dropdown">
+                        <li *ngFor="let data of registrationData">
+                            <a [routerLink]="['/registration', data?.url || '']"
+                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}</a>
+                            <p class="mb-0"> {{ data?.description }}</p>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-item">
+                    <a (click)="sidenavService.closeResponsive()" routerLink="/">News Center</a>
+                </li>
+                <li class="menu-item">
+                    <a (click)="sidenavService.closeResponsive()" routerLink="./contact">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</section>

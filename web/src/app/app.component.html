@@ -6,3 +6,11 @@
   <app-footer></app-footer>
 </div>
 <!-- <app-home-popup></app-home-popup> -->
+
+
+<div class="overlay" (click)="responsiveService.openResponsive()" *ngIf="responsiveService.isResponsiveOpen | async">
+</div>
+
+<div class="nav" *ngIf="responsiveService.isResponsiveOpen | async">
+  <app-responsive-header></app-responsive-header>
+</div>
