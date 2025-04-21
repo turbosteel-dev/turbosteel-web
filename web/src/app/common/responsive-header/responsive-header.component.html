@@ -73,7 +73,7 @@
                     </div>
                     <ul *ngIf="isFacilitiesUsOpen" class="dropdown">
                         <li *ngFor="let data of facilityCategoryData">
-                            <a [routerLink]="['/companies', data?.url || '']"
+                            <a [routerLink]="['/facilities', data?.url || '']"
                                 (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}</a>
                             <p class="mb-0"> {{ data?.headerDescription }}</p>
                         </li>
