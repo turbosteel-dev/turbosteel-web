@@ -12,12 +12,12 @@
             <ul>
                 <!-- About Us Dropdown -->
                 <li class="menu-item">
-                    <div class="flexes">
-                        <a routerLink="./aboutus" (click)="sidenavService.closeResponsive()">
+                    <div class="flexes" (click)="toggleAboutUsDropdown()">
+                        <a routerLink="./aboutus">
                             About Us
                         </a>
-                        <img (click)="toggleAboutUsDropdown()" [class.rotate]="isAboutUsOpen" class="chevron-img ms-4"
-                            src="assets/icons/down-arrow.svg" alt="">
+                        <img [class.rotate]="isAboutUsOpen" class="chevron-img ms-4" src="assets/icons/down-arrow.svg"
+                            alt="">
                     </div>
                     <ul *ngIf="isAboutUsOpen" class="dropdown">
                         <li *ngFor="let data of aboutData">
@@ -30,35 +30,37 @@
 
                 <!-- Mining Dropdown -->
                 <li class="menu-item">
-                    <div class="flexes">
-                        <a (click)="sidenavService.closeResponsive()">
+                    <div class="flexes" (click)="toggleWhyTurboDropdown()">
+                        <a>
                             Why Turbosteel
                         </a>
-                        <img (click)="toggleWhyTurboDropdown()" [class.rotate]="iswhyTurboSteelOpen"
-                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                        <img [class.rotate]="iswhyTurboSteelOpen" class="chevron-img ms-4"
+                            src="assets/icons/down-arrow.svg" alt="">
                     </div>
                     <ul *ngIf="iswhyTurboSteelOpen" class="dropdown">
                         <li *ngFor="let data of turbosteelData">
                             <a [routerLink]="['/why-turbosteel', data?.url || '']"
                                 (click)="sidenavService.closeResponsive()">{{
-                                data?.title || 'Unnamed' }}</a>
-                            <p class="mb-0"> {{ data?.description }}</p>
+                                data?.title || 'Unnamed' }}
+                                <p class="mb-0"> {{ data?.description }}</p>
+                            </a>
                         </li>
                     </ul>
                 </li>
 
 
                 <li class="menu-item">
-                    <div class="flexes">
-                        <a (click)="sidenavService.closeResponsive()">Our Products</a>
-                        <img (click)="toggleProductsDropdown()" [class.rotate]="isProductUsOpen"
-                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    <div class="flexes" (click)="toggleProductsDropdown()">
+                        <a>Our Products</a>
+                        <img [class.rotate]="isProductUsOpen" class="chevron-img ms-4" src="assets/icons/down-arrow.svg"
+                            alt="">
                     </div>
                     <ul *ngIf="isProductUsOpen" class="dropdown">
                         <li *ngFor="let data of productData">
-                            <a [routerLink]="['/companies', data?.url || '']"
-                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}</a>
-                            <p class="mb-0"> {{ data?.headerDescription }}</p>
+                            <a [routerLink]="['/products', data?.productUrlId || '']"
+                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}
+                                <p class="mb-0"> {{ data?.headerDescription }}</p>
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -66,16 +68,17 @@
 
 
                 <li class="menu-item">
-                    <div class="flexes">
-                        <a (click)="sidenavService.closeResponsive()">Facilities</a>
-                        <img (click)="toggleFacilitiesDropdown()" [class.rotate]="isFacilitiesUsOpen"
-                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    <div class="flexes" (click)="toggleFacilitiesDropdown()">
+                        <a>Facilities</a>
+                        <img [class.rotate]="isFacilitiesUsOpen" class="chevron-img ms-4"
+                            src="assets/icons/down-arrow.svg" alt="">
                     </div>
                     <ul *ngIf="isFacilitiesUsOpen" class="dropdown">
                         <li *ngFor="let data of facilityCategoryData">
-                            <a [routerLink]="['/companies', data?.url || '']"
-                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}</a>
+                            <a [routerLink]="['/facilities', data?.url || '']"
+                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}
                             <p class="mb-0"> {{ data?.headerDescription }}</p>
+                        </a>
                         </li>
                     </ul>
                 </li>
@@ -83,10 +86,10 @@
 
 
                 <li class="menu-item">
-                    <div class="flexes">
-                        <a (click)="sidenavService.closeResponsive()">Buy</a>
-                        <img (click)="toggleBuyDropdown()" [class.rotate]="isBuyUsOpen"
-                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    <div class="flexes" (click)="toggleBuyDropdown()">
+                        <a>Buy</a>
+                        <img [class.rotate]="isBuyUsOpen" class="chevron-img ms-4" src="assets/icons/down-arrow.svg"
+                            alt="">
                     </div>
                     <ul *ngIf="isBuyUsOpen" class="dropdown">
                         <li>
@@ -101,16 +104,17 @@
 
 
                 <li class="menu-item">
-                    <div class="flexes">
-                        <a (click)="sidenavService.closeResponsive()">Registration</a>
-                        <img (click)="toggleRegistrationDropdown()" [class.rotate]="isRegistrationUsOpen"
-                            class="chevron-img ms-4" src="assets/icons/down-arrow.svg" alt="">
+                    <div class="flexes" (click)="toggleRegistrationDropdown()">
+                        <a>Registration</a>
+                        <img [class.rotate]="isRegistrationUsOpen" class="chevron-img ms-4"
+                            src="assets/icons/down-arrow.svg" alt="">
                     </div>
                     <ul *ngIf="isRegistrationUsOpen" class="dropdown">
                         <li *ngFor="let data of registrationData">
                             <a [routerLink]="['/registration', data?.url || '']"
-                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}</a>
+                                (click)="sidenavService.closeResponsive()">{{ data?.title || 'Unnamed' }}
                             <p class="mb-0"> {{ data?.description }}</p>
+                        </a>
                         </li>
                     </ul>
                 </li>
