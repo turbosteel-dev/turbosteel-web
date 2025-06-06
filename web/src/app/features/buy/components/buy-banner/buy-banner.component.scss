@@ -1,18 +1,3 @@
-.banner-container{
-    min-height: 400px;
-    background-color: var(--ts-primary-color);
-    color: var(--ts-accent-color1);
-}
-.content{
-    display: flex;
-    justify-content: center;
-}
-.product-img{
-    max-width: 400px;
-}
-.main-content{
-    border: 1px solid #74C7FF !important;
-    background: #F4FBFF;
-    border-radius: 20px;
-    padding: 30px;
+img{
+    width: 100%;
 }
